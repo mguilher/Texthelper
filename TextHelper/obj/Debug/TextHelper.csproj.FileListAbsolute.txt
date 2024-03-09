@@ -1,0 +1,13 @@
+C:\souce\Old\TextHelper\TextHelper\bin\Debug\TextHelper.exe
+C:\souce\Old\TextHelper\TextHelper\bin\Debug\TextHelper.pdb
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.csproj.AssemblyReference.cache
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.Properties.Resources.resources
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.csproj.GenerateResource.cache
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.csproj.CoreCompileInputs.cache
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.exe
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.pdb
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.FrmText.resources
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.FrmLoadTokenDialog.resources
+C:\souce\Old\TextHelper\TextHelper\bin\Debug\Newtonsoft.Json.dll
+C:\souce\Old\TextHelper\TextHelper\bin\Debug\Newtonsoft.Json.xml
+C:\souce\Old\TextHelper\TextHelper\obj\Debug\TextHelper.csproj.Up2Date
