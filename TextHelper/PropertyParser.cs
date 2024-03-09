@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace TextHelper
 {
-    public class PropertyHelper
+    public class PropertyParser : BaseParser
     {
         public List<PropertyModel> Parser(List<string> lines)
         {
@@ -99,43 +100,10 @@ namespace TextHelper
             return sb.ToString();
         }
 
-        public string ToCarmel(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return name;
-            string result = "";
-            char[] carateres = name.ToCharArray();
-            for (int i = 0; i < carateres.Length; i++)
-            {
-                char s = carateres[i];
-                if (i == 0 && s >= 97 && s <= 122)
-                {
-                    s = (char)(s - 32);
-                }
-                result = result + s;
-            }
-            return result;
-        }
-
-        public string ToName(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return name;
-
-            if (name.Contains("_"))
-            {
-                string p1 = name.Substring(0, name.IndexOf("_"));
-                string p2 = name.Substring(name.IndexOf("_") + 1);
-
-                return $"{ToCarmel(p1)}{ToCarmel(p2)}";
-            }
-
-            return ToCarmel(name);
-        }
-
-
         public string ToMapClass(List<PropertyModel> list, string className)
         {
             var sb = new StringBuilder();
-            sb.AppendLine($"public class {className}Configuration : : IEntityTypeConfiguration<{className}>\r\n    {{");
+            sb.AppendLine($"public class {className}Configuration : IEntityTypeConfiguration<{className}>\r\n    {{");
             sb.AppendLine($"public void Configure(EntityTypeBuilder<{className}> builder) {{ ");
             sb.AppendLine($" builder.ToTable(\"{className}\");");
             sb.AppendLine(" builder.HasKey(t => t.Id);");
@@ -144,33 +112,88 @@ namespace TextHelper
 
                 if (property.DataType.Contains("varchar"))
                 {
-                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}){(!property.Nullable ? ".IsRequired()" : "")}; ");
+                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}).HasColumnName(\" {ToName(property.Name)} \"){(!property.Nullable ? ".IsRequired()" : "")}; ");
                 }
                 else if (property.DataType.Equals("Integer", StringComparison.InvariantCultureIgnoreCase) || property.DataType.Equals("Int", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}){(!property.Nullable ? ".IsRequired()" : "")}; ");
+                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}).HasColumnName(\"  {ToName(property.Name)}  \"){(!property.Nullable ? ".IsRequired()" : "")}; ");
                 }
                 else if (property.DataType.Equals("Float", StringComparison.InvariantCultureIgnoreCase) || property.DataType.Equals("Numeric", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}){(!property.Nullable ? ".IsRequired()" : "")}; ");
+                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}).HasColumnName(\" {ToName(property.Name)} \"){(!property.Nullable ? ".IsRequired()" : "")}; ");
                 }
                 else if (property.DataType.Equals("Boolean", StringComparison.InvariantCultureIgnoreCase) || property.DataType.Equals("bit", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}){(!property.Nullable ? ".IsRequired()" : "")}; ");
+                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}).HasColumnName(\"{ToName(property.Name)}\"){(!property.Nullable ? ".IsRequired()" : "")}; ");
                 }
                 else if (property.DataType.Equals("datetime", StringComparison.InvariantCultureIgnoreCase) || property.DataType.Equals("Date", StringComparison.InvariantCultureIgnoreCase) || property.DataType.Equals("datetimeoffset", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}){(!property.Nullable ? ".IsRequired()" : "")}; ");
+                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}).HasColumnName(\"{ToName(property.Name)}\"){(!property.Nullable ? ".IsRequired()" : "")}; ");
                 }
                 else
                 {
-                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}){(!property.Nullable ? ".IsRequired()" : "")}; ");
+                    sb.AppendLine($"builder.Property(b => b.{ToName(property.Name)}).HasColumnName(\" {ToName(property.Name)} \"){(!property.Nullable ? ".IsRequired()" : "")}; ");
                 }
                 sb.AppendLine();
             }
 
             sb.AppendLine("}");
             sb.AppendLine("}");
+            return sb.ToString();
+        }
+
+        public string JsonToClass(string json)
+        {
+            JObject jobj = JObject.Parse(json);
+
+            var properties = jobj.Properties();
+            var sb = new StringBuilder();
+
+            sb.AppendLine($"public class RootProxy\r\n    {{");
+            sb.AppendLine();
+
+            foreach (JProperty property in properties)
+            {
+                sb.AppendLine($"[JsonProperty(\"{property.Name}\")]");
+
+                if (property.Value.Type == JTokenType.String)
+                {
+                    sb.AppendLine($"public string {ToName(property.Name)} {{ get; set; }}");
+                }
+                else if (property.Value.Type == JTokenType.Integer)
+                {
+                    sb.AppendLine($"public int {ToName(property.Name)} {{ get; set; }}");
+                }
+                else if (property.Value.Type == JTokenType.Float)
+                {
+                    sb.AppendLine($"public double {ToName(property.Name)} {{ get; set; }}");
+                }
+                else if (property.Value.Type == JTokenType.Boolean)
+                {
+                    sb.AppendLine($"public bool {ToName(property.Name)} {{ get; set; }}");
+                }
+                else if (property.Value.Type == JTokenType.Date)
+                {
+                    sb.AppendLine($"public DateTime {ToName(property.Name)} {{ get; set; }}");
+                }
+                else if (property.Value.Type == JTokenType.Array)
+                {
+                    sb.AppendLine($"public List<string> {ToName(property.Name)} {{ get; set; }}");
+                }
+                else if (property.Value.Type == JTokenType.Object)
+                {
+                    sb.AppendLine($"public object {ToName(property.Name)} {{ get; set; }}");
+                }
+                else
+                {
+                    sb.AppendLine($"public string {ToName(property.Name)} {{ get; set; }}");
+                }
+                sb.AppendLine();
+            }
+
+
+            sb.AppendLine("}");
+
             return sb.ToString();
         }
     }

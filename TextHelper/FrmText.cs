@@ -110,6 +110,11 @@ namespace TextHelper
 
             string separator = (txtSeparator.Text == "\\n" ? Environment.NewLine : txtSeparator.Text);
             string innerSeparator = (txtInnerSeparator.Text == "\\n" ? Environment.NewLine : txtInnerSeparator.Text);
+
+
+            separator = (txtSeparator.Text == "\\s" ? " " : txtSeparator.Text);
+            innerSeparator = (txtInnerSeparator.Text == "\\s" ? " " : txtInnerSeparator.Text);
+
             var list = new List<List<string>>();
 
             foreach (string s in txtInput.Text.Split(separator.ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
@@ -270,15 +275,20 @@ namespace TextHelper
             return sb.ToString();
         }
 
-
-
         private void BtnReplaceListClick(object sender, EventArgs e)
         {
-            var list = GetList();
-            if (list != null)
+            try
             {
-                string result = ReplaceList(list);
-                txtOutput.Text = result;
+                var list = GetList();
+                if (list != null)
+                {
+                    string result = ReplaceList(list);
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
             }
         }
 
@@ -423,7 +433,7 @@ namespace TextHelper
             try
             {
                 List<string> list = GetList();
-                var helper = new PropertyHelper();
+                var helper = new PropertyParser();
                 if (list != null)
                 {
                     string result = helper.ToInstace(helper.Parser(list), txtVariableName.Text, txtTypeName.Text);
@@ -447,7 +457,7 @@ namespace TextHelper
             try
             {
                 List<string> list = GetList();
-                var helper = new PropertyHelper();
+                var helper = new PropertyParser();
                 if (list != null)
                 {
                     string result = helper.ToAssignment(helper.Parser(list), txtVariableName.Text);
@@ -580,9 +590,9 @@ namespace TextHelper
 
             try
             {
-                foreach (ListViewItem item in lbTokens.SelectedItems)
+                foreach (string item in lbTokens.SelectedItems)
                 {
-                    _tokens.Remove(item.Text);
+                    _tokens.Remove(item);
                 }
 
                 lbTokens.Items.Clear();
@@ -596,248 +606,126 @@ namespace TextHelper
 
         private void btnClearTokens_Click(object sender, EventArgs e)
         {
-            lbTokens.Items.Clear();
-            _tokens.Clear();
+            try
+            {
+                lbTokens.Items.Clear();
+                _tokens.Clear();
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
         }
 
         private void btnLoadTokens_Click(object sender, EventArgs e)
         {
-            string innerSeparator = txtInnerSeparator.Text;
-            if (string.IsNullOrWhiteSpace(innerSeparator))
+            try
             {
-                MessageBox.Show(Resources.NoSeparatorValue, Resources.Alert);
-                return;
+                string innerSeparator = txtInnerSeparator.Text;
+                if (string.IsNullOrWhiteSpace(innerSeparator))
+                {
+                    MessageBox.Show(Resources.NoSeparatorValue, Resources.Alert);
+                    return;
+                }
+                var frm = new FrmLoadTokenDialog(innerSeparator);
+                var result = frm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    var tokens = frm.Result;
+                    _tokens = tokens.Split(innerSeparator.ToCharArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
+                    lbTokens.Items.Clear();
+                    lbTokens.Items.AddRange(_tokens.Distinct().ToArray());
+                }
             }
-            var frm = new FrmLoadTokenDialog(innerSeparator);
-            var result = frm.ShowDialog();
-            if (result == DialogResult.OK)
+            catch (Exception ex)
             {
-                var tokens = frm.Result;
-                _tokens = tokens.Split(innerSeparator.ToCharArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
-                lbTokens.Items.Clear();
-                lbTokens.Items.AddRange(_tokens.ToArray());
+                txtOutput.Text = ex.ToString();
             }
-
         }
 
         private void btnLoadCsv_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPathCsv.Text))
+            try
             {
-                OpenFileDialog dlg = new OpenFileDialog();
-                dlg.Filter = "txt files (*.txt)|*.txt|CSV files (*.csv)|*.csv";
-                dlg.FilterIndex = 2;
-
-                if (dlg.ShowDialog() == DialogResult.OK)
+                if (string.IsNullOrEmpty(txtPathCsv.Text))
                 {
-                    txtPathCsv.Text = dlg.FileName;
+                    OpenFileDialog dlg = new OpenFileDialog();
+                    dlg.Filter = "txt files (*.txt)|*.txt|CSV files (*.csv)|*.csv";
+                    dlg.FilterIndex = 2;
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        txtPathCsv.Text = dlg.FileName;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(txtPathCsv.Text))
+                {
+                    txtInput.Text = File.ReadAllText(txtPathCsv.Text);
                 }
             }
-
-            if (!string.IsNullOrEmpty(txtPathCsv.Text))
+            catch (Exception ex)
             {
-                txtInput.Text = File.ReadAllText(txtPathCsv.Text);
+                txtOutput.Text = ex.ToString();
             }
-        }
-
-        private string ParserJsonObject(JToken jtoken)
-        {
-            var sb = new StringBuilder();
-            foreach (JToken item in jtoken.Children())
-            {
-                if (item.Type == JTokenType.Property)
-                {
-                    foreach (JToken jt1 in item.Values())
-                    {
-                        if (jt1.Type == JTokenType.String)
-                        {
-                            sb.Append(jt1.Value<string>());
-                            sb.Append(";");
-                        }
-                        else if (jt1.Type == JTokenType.Integer)
-                        {
-                            sb.Append(jt1.Value<int>());
-                            sb.Append(";");
-                        }
-                        else if (jt1.Type == JTokenType.Float)
-                        {
-                            sb.Append(jt1.Value<double>());
-                            sb.Append(";");
-                        }
-                        else if (jt1.Type == JTokenType.Boolean)
-                        {
-                            sb.Append(jt1.Value<bool>());
-                            sb.Append(";");
-                        }
-                        else if (jt1.Type == JTokenType.Date)
-                        {
-                            sb.Append(jt1.Value<DateTime>());
-                            sb.Append(";");
-                        }
-                    }
-                }
-            }
-            return sb.ToString();
-        }
-
-        private string ParserJsonArray(IEnumerable<JToken> tokens)
-        {
-            var sb = new StringBuilder();
-
-            foreach (JToken item in tokens)
-            {
-                if (item.Type == JTokenType.Object)
-                {
-                    sb.AppendLine(ParserJsonObject(item));
-                }
-                else if (item.Type == JTokenType.Array)
-                {
-                    sb.AppendLine(ParserJsonArray(item.Values()));
-                }
-                else if (item.Type == JTokenType.Property)
-                {
-                    JProperty property = (JProperty)item;
-
-                    if (property.Value.Type == JTokenType.String)
-                    {
-                        sb.Append(property.Value.Value<string>());
-                        sb.Append(";");
-                    }
-                    else if (property.Value.Type == JTokenType.Integer)
-                    {
-                        sb.Append(property.Value.Value<int>());
-                        sb.Append(";");
-                    }
-                    else if (property.Value.Type == JTokenType.Float)
-                    {
-                        sb.Append(property.Value.Value<double>());
-                        sb.Append(";");
-                    }
-                    else if (property.Value.Type == JTokenType.Boolean)
-                    {
-                        sb.Append(property.Value.Value<bool>());
-                        sb.Append(";");
-                    }
-                    else if (property.Value.Type == JTokenType.Date)
-                    {
-                        sb.Append(property.Value.Value<DateTime>());
-                        sb.Append(";");
-                    }
-                    else if (property.Value.Type == JTokenType.Array)
-                    {
-                        sb.AppendLine(ParserJsonArray(property.Value.Values()));
-                    }
-                    else if (property.Value.Type == JTokenType.Object)
-                    {
-                        sb.AppendLine(ParserJsonObject(property.Value));
-                    }
-                    else
-                    {
-                        sb.Append(property.Value);
-                        sb.Append(";");
-                    }
-                }
-                else
-                {
-                    sb.AppendLine(item.Value<string>());
-                }
-
-            }
-
-            return sb.ToString();
-        }
-        private string ParserJson(string data, string query)
-        {
-            var sb = new StringBuilder();
-
-
-            if (string.IsNullOrEmpty(query) && data.StartsWith("{"))
-            {
-                MessageBox.Show(Resources.ParserJsonNoQuery, Resources.Alert);
-                return string.Empty;
-            }
-
-            if (!string.IsNullOrEmpty(query))
-            {
-                if (data.StartsWith("{"))
-                {
-                    JObject jobj = JObject.Parse(data);
-                    if (!string.IsNullOrEmpty(query))
-                    {
-                        var tokens = jobj.SelectTokens(query);
-                        return ParserJsonArray(tokens);
-                    }
-
-                }
-                else if (data.StartsWith("["))
-                {
-                    JArray jarray = JArray.Parse(data);
-                    if (!string.IsNullOrEmpty(query))
-                    {
-                        var tokens = jarray.SelectTokens(query);
-                        return ParserJsonArray(tokens);
-                    }
-                }
-            }
-            else
-            {
-                if (data.StartsWith("["))
-                {
-                    JArray jarray = JArray.Parse(data);
-                    var tokens = jarray.Children();
-                    return ParserJsonArray(tokens);
-                }
-                else
-                {
-                    MessageBox.Show(Resources.ParserJsonNoQuery, Resources.Alert);
-                    return string.Empty;
-                }
-            }
-
-
-            return sb.ToString();
         }
 
         private void btnLoadListJson_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPathJson.Text))
+            try
             {
-                OpenFileDialog dlg = new OpenFileDialog();
-                dlg.Filter = "txt files (*.txt)|*.txt|Json files (*.json)|*.json";
-                dlg.FilterIndex = 2;
-                if (dlg.ShowDialog() == DialogResult.OK)
+
+                if (string.IsNullOrEmpty(txtPathJson.Text))
                 {
-                    txtPathJson.Text = dlg.FileName;
+                    OpenFileDialog dlg = new OpenFileDialog();
+                    dlg.Filter = "txt files (*.txt)|*.txt|Json files (*.json)|*.json";
+                    dlg.FilterIndex = 2;
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        txtPathJson.Text = dlg.FileName;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(txtPathJson.Text))
+                {
+                    string data = File.ReadAllText(txtPathJson.Text);
+                    string query = txtJsonSelect.Text;
+                    var parser = new JsonTextParser();
+                    txtInput.Text = parser.ParserJson(data, query);
                 }
             }
-
-            if (!string.IsNullOrEmpty(txtPathJson.Text))
+            catch (Exception ex)
             {
-                string data = File.ReadAllText(txtPathJson.Text);
-                string query = txtJsonSelect.Text;
-                txtInput.Text = ParserJson(data, query);
+                txtOutput.Text = ex.ToString();
             }
         }
 
         private void btnLoadListXml_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPathXml.Text))
+            try
             {
-                OpenFileDialog dlg = new OpenFileDialog();
-                dlg.Filter = "txt files (*.txt)|*.txt|Json files (*.xml)|*.xml";
-                dlg.FilterIndex = 2;
-
-                if (dlg.ShowDialog() == DialogResult.OK)
+                if (string.IsNullOrEmpty(txtPathXml.Text))
                 {
-                    txtPathXml.Text = dlg.FileName;
+                    OpenFileDialog dlg = new OpenFileDialog();
+                    dlg.Filter = "txt files (*.txt)|*.txt|Json files (*.xml)|*.xml";
+                    dlg.FilterIndex = 2;
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        txtPathXml.Text = dlg.FileName;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(txtPathXml.Text))
+                {
+                    string data = File.ReadAllText(txtPathXml.Text);
+                    string query = txtXmlSelect.Text;
+                    txtInput.Text = ParserXml(data, query);
                 }
             }
-
-            if (!string.IsNullOrEmpty(txtPathXml.Text))
+            catch (Exception ex)
             {
-                string data = File.ReadAllText(txtPathXml.Text);
-                string query = txtXmlSelect.Text;
-                txtInput.Text = ParserXml(data, query);
+                txtOutput.Text = ex.ToString();
             }
         }
 
@@ -848,47 +736,67 @@ namespace TextHelper
 
         private void btnParserJson_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtInput.Text))
+            try
             {
-                MessageBox.Show(Resources.NoInputValue, Resources.Alert);
-                return;
+                if (string.IsNullOrWhiteSpace(txtInput.Text))
+                {
+                    MessageBox.Show(Resources.NoInputValue, Resources.Alert);
+                    return;
+                }
+                string query = txtJsonSelect.Text;
+                var parser = new JsonTextParser();
+                txtOutput.Text = parser.ParserJson(txtInput.Text, query);
             }
-
-            string query = txtJsonSelect.Text;
-
-            txtOutput.Text = ParserJson(txtInput.Text, query);
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
         }
 
         private void llInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(((LinkLabel)sender).Text);
+            try
+            {
+                System.Diagnostics.Process.Start(((LinkLabel)sender).Text);
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
         }
 
         private void btnCheckSqlInsert_Click(object sender, EventArgs e)
         {
-            string txt = txtInput.Text;
-
-            if (!string.IsNullOrEmpty(txt))
+            try
             {
-                int inedexFieldsStart = txt.IndexOf("(") + 1;
-                int inedexFieldsEnd = txt.IndexOf(")");
-                string fields = txt.Substring(inedexFieldsStart, inedexFieldsEnd - inedexFieldsStart);
-                txt = txt.Substring(inedexFieldsEnd + 1);
-                int inedexValuesStart = txt.IndexOf("(") + 1;
-                int inedexValuesEnd = txt.IndexOf(")");
-                string values = txt.Substring(inedexValuesStart, inedexValuesEnd - inedexValuesStart);
+                string txt = txtInput.Text;
 
-                var fieldsList = fields.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                var valuesList = values.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-
-                var sb = new StringBuilder();
-                for (int i = 0; i < fieldsList.Length; i++)
+                if (!string.IsNullOrEmpty(txt) && txt.IndexOf("(") >= 0 && txt.IndexOf(")") >= 0)
                 {
-                    sb.AppendLine($"{fieldsList[i]}={valuesList[i]}");
-                }
+                    int inedexFieldsStart = txt.IndexOf("(") + 1;
+                    int inedexFieldsEnd = txt.IndexOf(")");
+                    string fields = txt.Substring(inedexFieldsStart, inedexFieldsEnd - inedexFieldsStart);
+                    txt = txt.Substring(inedexFieldsEnd + 1);
+                    int inedexValuesStart = txt.IndexOf("(") + 1;
+                    int inedexValuesEnd = txt.IndexOf(")");
+                    string values = txt.Substring(inedexValuesStart, inedexValuesEnd - inedexValuesStart);
 
-                txtOutput.Text = sb.ToString();
+                    var fieldsList = fields.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                    var valuesList = values.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+                    var sb = new StringBuilder();
+                    for (int i = 0; i < fieldsList.Length; i++)
+                    {
+                        sb.AppendLine($"{fieldsList[i]}={valuesList[i]}");
+                    }
+
+                    txtOutput.Text = sb.ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }        
 
         }
 
@@ -898,7 +806,7 @@ namespace TextHelper
             try
             {
                 List<string> list = GetList();
-                var helper = new PropertyHelper();
+                var helper = new PropertyParser();
                 if (list != null)
                 {
                     var properties = helper.Parser(list);
@@ -923,7 +831,7 @@ namespace TextHelper
             try
             {
                 List<string> list = GetList();
-                var helper = new PropertyHelper();
+                var helper = new PropertyParser();
                 if (list != null)
                 {
                     var properties = helper.Parser(list);
@@ -943,38 +851,6 @@ namespace TextHelper
             }
         }
 
-        public string ToCarmel(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return name;
-            string result = "";
-            char[] carateres = name.ToCharArray();
-            for (int i = 0; i < carateres.Length; i++)
-            {
-                char s = carateres[i];
-                if (i == 0 && s>=97 && s<=122)
-                {
-                    s =(char)(s - 32);
-                }
-                result= result + s;
-            }
-            return result;
-        }
-
-        public string ToName(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return name;
-
-            if (name.Contains("_"))
-            {
-                string p1 = name.Substring(0, name.IndexOf("_"));
-                string p2 = name.Substring(name.IndexOf("_") + 1);
-
-                return $"{ToCarmel(p1)}{ToCarmel(p2)}";
-            }
-
-            return ToCarmel(name);
-        }
-
         private void btnJsonToClass_Click(object sender, EventArgs e)
         {
             try
@@ -984,57 +860,9 @@ namespace TextHelper
                     MessageBox.Show(Resources.NoInputValue, Resources.Alert);
                     return;
                 }
-                JObject jobj = JObject.Parse(txtInput.Text);
 
-                var properties = jobj.Properties();
-                var sb = new StringBuilder();
-
-                sb.AppendLine($"public class RootProxy\r\n    {{");
-                sb.AppendLine();
-
-                foreach (JProperty property in properties)
-                {
-                    sb.AppendLine($"[JsonProperty(\"{property.Name}\")]");
-
-                    if (property.Value.Type == JTokenType.String)
-                    {
-                        sb.AppendLine($"public string {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else if (property.Value.Type == JTokenType.Integer)
-                    {
-                        sb.AppendLine($"public int {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else if (property.Value.Type == JTokenType.Float)
-                    {
-                        sb.AppendLine($"public double {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else if (property.Value.Type == JTokenType.Boolean)
-                    {
-                        sb.AppendLine($"public bool {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else if (property.Value.Type == JTokenType.Date)
-                    {
-                        sb.AppendLine($"public DateTime {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else if (property.Value.Type == JTokenType.Array)
-                    {
-                        sb.AppendLine($"public List<string> {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else if (property.Value.Type == JTokenType.Object)
-                    {
-                        sb.AppendLine($"public object {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    else
-                    {
-                        sb.AppendLine($"public string {ToName(property.Name)} {{ get; set; }}");
-                    }
-                    sb.AppendLine();
-                }
-
-
-                sb.AppendLine("}");
-
-                txtOutput.Text = sb.ToString();
+                var helper = new PropertyParser();
+                txtOutput.Text = helper.JsonToClass(txtInput.Text);
 
             }
             catch (Exception ex)
@@ -1073,12 +901,12 @@ namespace TextHelper
                 }
 
                 List<string> list = GetList();
-                var helper = new PropertyHelper();
+                var helper = new PropertyParser();
                 if (list != null)
                 {
-                    var properties = helper.Parser(list);                   
+                    var properties = helper.Parser(list);
 
-                    txtOutput.Text = helper.ToMapClass(properties,txtClassName.Text);
+                    txtOutput.Text = helper.ToMapClass(properties, txtClassName.Text);
                 }
             }
             catch (Exception ex)

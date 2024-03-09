@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseParser.cs" />
     <Compile Include="FrmLoadTokenDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,9 +60,10 @@
     <Compile Include="FrmText.Designer.cs">
       <DependentUpon>FrmText.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonTextParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyHelper.cs" />
+    <Compile Include="PropertyParser.cs" />
     <Compile Include="PropertyModel.cs" />
     <Compile Include="TableSqlParser.cs" />
     <EmbeddedResource Include="FrmLoadTokenDialog.resx">

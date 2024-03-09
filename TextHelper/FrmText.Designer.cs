@@ -123,7 +123,7 @@
             // 
             this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInput.Location = new System.Drawing.Point(13, 27);
+            this.txtInput.Location = new System.Drawing.Point(12, 27);
             this.txtInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
@@ -136,7 +136,7 @@
             this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOutput.Location = new System.Drawing.Point(12, 616);
+            this.txtOutput.Location = new System.Drawing.Point(12, 620);
             this.txtOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
@@ -183,7 +183,7 @@
             // lblStat
             // 
             this.lblStat.AutoSize = true;
-            this.lblStat.Location = new System.Drawing.Point(13, 116);
+            this.lblStat.Location = new System.Drawing.Point(7, 84);
             this.lblStat.Name = "lblStat";
             this.lblStat.Size = new System.Drawing.Size(37, 16);
             this.lblStat.TabIndex = 8;
@@ -191,7 +191,7 @@
             // 
             // txtStart
             // 
-            this.txtStart.Location = new System.Drawing.Point(61, 112);
+            this.txtStart.Location = new System.Drawing.Point(55, 80);
             this.txtStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStart.Name = "txtStart";
             this.txtStart.Size = new System.Drawing.Size(255, 22);
@@ -199,7 +199,7 @@
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(369, 112);
+            this.txtEnd.Location = new System.Drawing.Point(363, 80);
             this.txtEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(255, 22);
@@ -208,7 +208,7 @@
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
-            this.lblEnd.Location = new System.Drawing.Point(325, 116);
+            this.lblEnd.Location = new System.Drawing.Point(319, 84);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(34, 16);
             this.lblEnd.TabIndex = 10;
@@ -216,7 +216,7 @@
             // 
             // btnConcatenateList
             // 
-            this.btnConcatenateList.Location = new System.Drawing.Point(639, 108);
+            this.btnConcatenateList.Location = new System.Drawing.Point(633, 76);
             this.btnConcatenateList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConcatenateList.Name = "btnConcatenateList";
             this.btnConcatenateList.Size = new System.Drawing.Size(129, 31);
@@ -351,7 +351,7 @@
             // 
             // btnPropertiesToInstace
             // 
-            this.btnPropertiesToInstace.Location = new System.Drawing.Point(368, 60);
+            this.btnPropertiesToInstace.Location = new System.Drawing.Point(381, 209);
             this.btnPropertiesToInstace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPropertiesToInstace.Name = "btnPropertiesToInstace";
             this.btnPropertiesToInstace.Size = new System.Drawing.Size(197, 31);
@@ -363,7 +363,7 @@
             // lblVariableName
             // 
             this.lblVariableName.AutoSize = true;
-            this.lblVariableName.Location = new System.Drawing.Point(5, 68);
+            this.lblVariableName.Location = new System.Drawing.Point(18, 217);
             this.lblVariableName.Name = "lblVariableName";
             this.lblVariableName.Size = new System.Drawing.Size(101, 16);
             this.lblVariableName.TabIndex = 27;
@@ -372,7 +372,7 @@
             // txtVariableName
             // 
             this.txtVariableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVariableName.Location = new System.Drawing.Point(116, 64);
+            this.txtVariableName.Location = new System.Drawing.Point(129, 213);
             this.txtVariableName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVariableName.Name = "txtVariableName";
             this.txtVariableName.Size = new System.Drawing.Size(67, 20);
@@ -382,7 +382,7 @@
             // lblTypeName
             // 
             this.lblTypeName.AutoSize = true;
-            this.lblTypeName.Location = new System.Drawing.Point(189, 68);
+            this.lblTypeName.Location = new System.Drawing.Point(202, 217);
             this.lblTypeName.Name = "lblTypeName";
             this.lblTypeName.Size = new System.Drawing.Size(82, 16);
             this.lblTypeName.TabIndex = 29;
@@ -391,7 +391,7 @@
             // txtTypeName
             // 
             this.txtTypeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTypeName.Location = new System.Drawing.Point(281, 64);
+            this.txtTypeName.Location = new System.Drawing.Point(294, 213);
             this.txtTypeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.Size = new System.Drawing.Size(67, 20);
@@ -400,7 +400,7 @@
             // 
             // btnPropertiesToAssignment
             // 
-            this.btnPropertiesToAssignment.Location = new System.Drawing.Point(571, 60);
+            this.btnPropertiesToAssignment.Location = new System.Drawing.Point(584, 209);
             this.btnPropertiesToAssignment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPropertiesToAssignment.Name = "btnPropertiesToAssignment";
             this.btnPropertiesToAssignment.Size = new System.Drawing.Size(197, 31);
@@ -432,11 +432,6 @@
             this.tpReplace.Controls.Add(this.lblQuantityReplicate);
             this.tpReplace.Controls.Add(this.txtQuantityReplicate);
             this.tpReplace.Controls.Add(this.btnConcatenateReplaceList);
-            this.tpReplace.Controls.Add(this.lblTypeName);
-            this.tpReplace.Controls.Add(this.btnPropertiesToAssignment);
-            this.tpReplace.Controls.Add(this.txtTypeName);
-            this.tpReplace.Controls.Add(this.lblVariableName);
-            this.tpReplace.Controls.Add(this.txtVariableName);
             this.tpReplace.Controls.Add(this.btnReplaceList);
             this.tpReplace.Controls.Add(this.txtSeparator);
             this.tpReplace.Controls.Add(this.lblSeparator);
@@ -444,7 +439,6 @@
             this.tpReplace.Controls.Add(this.txtEnd);
             this.tpReplace.Controls.Add(this.lblEnd);
             this.tpReplace.Controls.Add(this.txtStart);
-            this.tpReplace.Controls.Add(this.btnPropertiesToInstace);
             this.tpReplace.Controls.Add(this.lblStat);
             this.tpReplace.Controls.Add(this.lblInnerSaparator);
             this.tpReplace.Controls.Add(this.btnSplitReplaceList);
@@ -461,7 +455,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 207);
+            this.label1.Location = new System.Drawing.Point(36, 207);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(350, 16);
@@ -775,15 +769,21 @@
             this.tpAction.Controls.Add(this.btnClassToMap);
             this.tpAction.Controls.Add(this.btnPropertiesToListWithText);
             this.tpAction.Controls.Add(this.btnCheckSqlInsert);
+            this.tpAction.Controls.Add(this.lblTypeName);
             this.tpAction.Controls.Add(this.btnJsonToClass);
             this.tpAction.Controls.Add(this.btnPropertiesToList);
+            this.tpAction.Controls.Add(this.btnPropertiesToAssignment);
             this.tpAction.Controls.Add(this.btnTableSqlToClass);
+            this.tpAction.Controls.Add(this.txtTypeName);
+            this.tpAction.Controls.Add(this.btnPropertiesToInstace);
+            this.tpAction.Controls.Add(this.txtVariableName);
+            this.tpAction.Controls.Add(this.lblVariableName);
             this.tpAction.Location = new System.Drawing.Point(4, 25);
             this.tpAction.Name = "tpAction";
             this.tpAction.Padding = new System.Windows.Forms.Padding(3);
             this.tpAction.Size = new System.Drawing.Size(963, 275);
             this.tpAction.TabIndex = 4;
-            this.tpAction.Text = "Actions";
+            this.tpAction.Text = "Custom Actions";
             this.tpAction.UseVisualStyleBackColor = true;
             // 
             // txtClassName
