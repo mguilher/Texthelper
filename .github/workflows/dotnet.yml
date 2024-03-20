@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -27,4 +27,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish TextHelper.csproj -c Release -o release — nologo
+      run: dotnet publish TextHelper/TextHelper.csproj -c Release -o release — nologo
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Application_Artifact
+        path: /home/runner/work/TextHelper/TextHelper/release/
+
