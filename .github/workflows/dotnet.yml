@@ -27,4 +27,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -c Release -o release — nologo
+      run: dotnet publish D:\a\Texthelper\Texthelper\TextHelper\TextHelper.csproj -c Release -o release — nologo
