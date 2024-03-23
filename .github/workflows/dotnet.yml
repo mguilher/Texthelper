@@ -27,10 +27,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish TextHelper/TextHelper/TextHelper/TextHelper.csproj -c Release -o release — nologo
-    - name: Upload Build Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: Application_Artifact
-        path: /home/runner/work/TextHelper/TextHelper/release/
-
+      run: dotnet publish -c Release -o release — nologo
