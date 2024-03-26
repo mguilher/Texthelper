@@ -796,7 +796,7 @@ namespace TextHelper
             catch (Exception ex)
             {
                 txtOutput.Text = ex.ToString();
-            }        
+            }
 
         }
 
@@ -907,6 +907,25 @@ namespace TextHelper
                     var properties = helper.Parser(list);
 
                     txtOutput.Text = helper.ToMapClass(properties, txtClassName.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnTableToClassWithJP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> list = GetList();
+                var helper = new TableSqlParser();
+                if (list != null)
+                {
+                    var properties = helper.Parser(list);
+
+                    txtOutput.Text = helper.ToClass(properties,true);
                 }
             }
             catch (Exception ex)

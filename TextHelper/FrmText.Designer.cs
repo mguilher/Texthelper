@@ -29,903 +29,908 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmText));
-            this.btnReplaceList = new System.Windows.Forms.Button();
-            this.txtInput = new System.Windows.Forms.TextBox();
-            this.txtOutput = new System.Windows.Forms.TextBox();
-            this.txtSeparator = new System.Windows.Forms.TextBox();
-            this.lblSeparator = new System.Windows.Forms.Label();
-            this.txtReplaceToken = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblStat = new System.Windows.Forms.Label();
-            this.txtStart = new System.Windows.Forms.TextBox();
-            this.txtEnd = new System.Windows.Forms.TextBox();
-            this.lblEnd = new System.Windows.Forms.Label();
-            this.btnConcatenateList = new System.Windows.Forms.Button();
-            this.btnConcatenateReplaceList = new System.Windows.Forms.Button();
-            this.txtTemplate = new System.Windows.Forms.TextBox();
-            this.lblInput = new System.Windows.Forms.Label();
-            this.lblTemplate = new System.Windows.Forms.Label();
-            this.lblOutput = new System.Windows.Forms.Label();
-            this.btnSortByAz = new System.Windows.Forms.Button();
-            this.btnSortByZa = new System.Windows.Forms.Button();
-            this.btnSetOutToIn = new System.Windows.Forms.Button();
-            this.btnSetOutToClipboard = new System.Windows.Forms.Button();
-            this.btnSplitReplaceList = new System.Windows.Forms.Button();
-            this.lblInnerSaparator = new System.Windows.Forms.Label();
-            this.txtInnerSeparator = new System.Windows.Forms.TextBox();
-            this.btnPropertiesToInstace = new System.Windows.Forms.Button();
-            this.lblVariableName = new System.Windows.Forms.Label();
-            this.txtVariableName = new System.Windows.Forms.TextBox();
-            this.lblTypeName = new System.Windows.Forms.Label();
-            this.txtTypeName = new System.Windows.Forms.TextBox();
-            this.btnPropertiesToAssignment = new System.Windows.Forms.Button();
-            this.tcOptions = new System.Windows.Forms.TabControl();
-            this.tpReplace = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnReplicate = new System.Windows.Forms.Button();
-            this.lblQuantityReplicate = new System.Windows.Forms.Label();
-            this.txtQuantityReplicate = new System.Windows.Forms.TextBox();
-            this.tpTemplate = new System.Windows.Forms.TabPage();
-            this.tpToken = new System.Windows.Forms.TabPage();
-            this.lbTokens = new System.Windows.Forms.ListBox();
-            this.btnLoadTokens = new System.Windows.Forms.Button();
-            this.btnClearTokens = new System.Windows.Forms.Button();
-            this.lblTokensInfo = new System.Windows.Forms.Label();
-            this.btnDeleteToken = new System.Windows.Forms.Button();
-            this.btnAddToken = new System.Windows.Forms.Button();
-            this.tpLoadList = new System.Windows.Forms.TabPage();
-            this.llInfo = new System.Windows.Forms.LinkLabel();
-            this.btnParserJson = new System.Windows.Forms.Button();
-            this.txtXmlSelect = new System.Windows.Forms.TextBox();
-            this.lblXmlSelect = new System.Windows.Forms.Label();
-            this.txtJsonSelect = new System.Windows.Forms.TextBox();
-            this.lblJsonSelect = new System.Windows.Forms.Label();
-            this.btnLoadListXml = new System.Windows.Forms.Button();
-            this.txtPathXml = new System.Windows.Forms.TextBox();
-            this.lblPathXml = new System.Windows.Forms.Label();
-            this.btnLoadListJson = new System.Windows.Forms.Button();
-            this.txtPathJson = new System.Windows.Forms.TextBox();
-            this.lblPathJson = new System.Windows.Forms.Label();
-            this.btnLoadCsv = new System.Windows.Forms.Button();
-            this.txtPathCsv = new System.Windows.Forms.TextBox();
-            this.lblPathCsv = new System.Windows.Forms.Label();
-            this.tpAction = new System.Windows.Forms.TabPage();
-            this.txtClassName = new System.Windows.Forms.TextBox();
-            this.lblClassName = new System.Windows.Forms.Label();
-            this.btnClassToMap = new System.Windows.Forms.Button();
-            this.btnPropertiesToListWithText = new System.Windows.Forms.Button();
-            this.btnCheckSqlInsert = new System.Windows.Forms.Button();
-            this.btnJsonToClass = new System.Windows.Forms.Button();
-            this.btnPropertiesToList = new System.Windows.Forms.Button();
-            this.btnTableSqlToClass = new System.Windows.Forms.Button();
-            this.btnSortInputByZa = new System.Windows.Forms.Button();
-            this.btnSortInputByAz = new System.Windows.Forms.Button();
-            this.tcOptions.SuspendLayout();
-            this.tpReplace.SuspendLayout();
-            this.tpTemplate.SuspendLayout();
-            this.tpToken.SuspendLayout();
-            this.tpLoadList.SuspendLayout();
-            this.tpAction.SuspendLayout();
-            this.SuspendLayout();
+            btnReplaceList = new System.Windows.Forms.Button();
+            txtInput = new System.Windows.Forms.TextBox();
+            txtOutput = new System.Windows.Forms.TextBox();
+            txtSeparator = new System.Windows.Forms.TextBox();
+            lblSeparator = new System.Windows.Forms.Label();
+            txtReplaceToken = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            lblStat = new System.Windows.Forms.Label();
+            txtStart = new System.Windows.Forms.TextBox();
+            txtEnd = new System.Windows.Forms.TextBox();
+            lblEnd = new System.Windows.Forms.Label();
+            btnConcatenateList = new System.Windows.Forms.Button();
+            btnConcatenateReplaceList = new System.Windows.Forms.Button();
+            txtTemplate = new System.Windows.Forms.TextBox();
+            lblInput = new System.Windows.Forms.Label();
+            lblTemplate = new System.Windows.Forms.Label();
+            lblOutput = new System.Windows.Forms.Label();
+            btnSortByAz = new System.Windows.Forms.Button();
+            btnSortByZa = new System.Windows.Forms.Button();
+            btnSetOutToIn = new System.Windows.Forms.Button();
+            btnSetOutToClipboard = new System.Windows.Forms.Button();
+            btnSplitReplaceList = new System.Windows.Forms.Button();
+            lblInnerSaparator = new System.Windows.Forms.Label();
+            txtInnerSeparator = new System.Windows.Forms.TextBox();
+            btnPropertiesToInstace = new System.Windows.Forms.Button();
+            lblVariableName = new System.Windows.Forms.Label();
+            txtVariableName = new System.Windows.Forms.TextBox();
+            lblTypeName = new System.Windows.Forms.Label();
+            txtTypeName = new System.Windows.Forms.TextBox();
+            btnPropertiesToAssignment = new System.Windows.Forms.Button();
+            tcOptions = new System.Windows.Forms.TabControl();
+            tpReplace = new System.Windows.Forms.TabPage();
+            label1 = new System.Windows.Forms.Label();
+            btnReplicate = new System.Windows.Forms.Button();
+            lblQuantityReplicate = new System.Windows.Forms.Label();
+            txtQuantityReplicate = new System.Windows.Forms.TextBox();
+            tpTemplate = new System.Windows.Forms.TabPage();
+            tpToken = new System.Windows.Forms.TabPage();
+            lbTokens = new System.Windows.Forms.ListBox();
+            btnLoadTokens = new System.Windows.Forms.Button();
+            btnClearTokens = new System.Windows.Forms.Button();
+            lblTokensInfo = new System.Windows.Forms.Label();
+            btnDeleteToken = new System.Windows.Forms.Button();
+            btnAddToken = new System.Windows.Forms.Button();
+            tpLoadList = new System.Windows.Forms.TabPage();
+            llInfo = new System.Windows.Forms.LinkLabel();
+            btnParserJson = new System.Windows.Forms.Button();
+            txtXmlSelect = new System.Windows.Forms.TextBox();
+            lblXmlSelect = new System.Windows.Forms.Label();
+            txtJsonSelect = new System.Windows.Forms.TextBox();
+            lblJsonSelect = new System.Windows.Forms.Label();
+            btnLoadListXml = new System.Windows.Forms.Button();
+            txtPathXml = new System.Windows.Forms.TextBox();
+            lblPathXml = new System.Windows.Forms.Label();
+            btnLoadListJson = new System.Windows.Forms.Button();
+            txtPathJson = new System.Windows.Forms.TextBox();
+            lblPathJson = new System.Windows.Forms.Label();
+            btnLoadCsv = new System.Windows.Forms.Button();
+            txtPathCsv = new System.Windows.Forms.TextBox();
+            lblPathCsv = new System.Windows.Forms.Label();
+            tpAction = new System.Windows.Forms.TabPage();
+            btnTableToClassWithJP = new System.Windows.Forms.Button();
+            txtClassName = new System.Windows.Forms.TextBox();
+            lblClassName = new System.Windows.Forms.Label();
+            btnClassToMap = new System.Windows.Forms.Button();
+            btnPropertiesToListWithText = new System.Windows.Forms.Button();
+            btnCheckSqlInsert = new System.Windows.Forms.Button();
+            btnJsonToClass = new System.Windows.Forms.Button();
+            btnPropertiesToList = new System.Windows.Forms.Button();
+            btnTableSqlToClass = new System.Windows.Forms.Button();
+            btnSortInputByZa = new System.Windows.Forms.Button();
+            btnSortInputByAz = new System.Windows.Forms.Button();
+            tcOptions.SuspendLayout();
+            tpReplace.SuspendLayout();
+            tpTemplate.SuspendLayout();
+            tpToken.SuspendLayout();
+            tpLoadList.SuspendLayout();
+            tpAction.SuspendLayout();
+            SuspendLayout();
             // 
             // btnReplaceList
             // 
-            this.btnReplaceList.Location = new System.Drawing.Point(155, 9);
-            this.btnReplaceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReplaceList.Name = "btnReplaceList";
-            this.btnReplaceList.Size = new System.Drawing.Size(129, 31);
-            this.btnReplaceList.TabIndex = 0;
-            this.btnReplaceList.Text = "Replace List";
-            this.btnReplaceList.UseVisualStyleBackColor = true;
-            this.btnReplaceList.Click += new System.EventHandler(this.BtnReplaceListClick);
+            btnReplaceList.Location = new System.Drawing.Point(136, 8);
+            btnReplaceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnReplaceList.Name = "btnReplaceList";
+            btnReplaceList.Size = new System.Drawing.Size(113, 29);
+            btnReplaceList.TabIndex = 0;
+            btnReplaceList.Text = "Replace List";
+            btnReplaceList.UseVisualStyleBackColor = true;
+            btnReplaceList.Click += BtnReplaceListClick;
             // 
             // txtInput
             // 
-            this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInput.Location = new System.Drawing.Point(12, 27);
-            this.txtInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtInput.Multiline = true;
-            this.txtInput.Name = "txtInput";
-            this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtInput.Size = new System.Drawing.Size(967, 212);
-            this.txtInput.TabIndex = 1;
+            txtInput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtInput.Location = new System.Drawing.Point(10, 25);
+            txtInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtInput.Multiline = true;
+            txtInput.Name = "txtInput";
+            txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            txtInput.Size = new System.Drawing.Size(847, 199);
+            txtInput.TabIndex = 1;
             // 
             // txtOutput
             // 
-            this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOutput.Location = new System.Drawing.Point(12, 620);
-            this.txtOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOutput.Multiline = true;
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(968, 196);
-            this.txtOutput.TabIndex = 2;
+            txtOutput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtOutput.Location = new System.Drawing.Point(10, 581);
+            txtOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtOutput.Multiline = true;
+            txtOutput.Name = "txtOutput";
+            txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            txtOutput.Size = new System.Drawing.Size(848, 184);
+            txtOutput.TabIndex = 2;
             // 
             // txtSeparator
             // 
-            this.txtSeparator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtSeparator.Location = new System.Drawing.Point(77, 12);
-            this.txtSeparator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSeparator.Name = "txtSeparator";
-            this.txtSeparator.Size = new System.Drawing.Size(71, 20);
-            this.txtSeparator.TabIndex = 3;
-            this.txtSeparator.Text = "\\n";
+            txtSeparator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            txtSeparator.Location = new System.Drawing.Point(67, 11);
+            txtSeparator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtSeparator.Name = "txtSeparator";
+            txtSeparator.Size = new System.Drawing.Size(63, 20);
+            txtSeparator.TabIndex = 3;
+            txtSeparator.Text = "\\n";
             // 
             // lblSeparator
             // 
-            this.lblSeparator.AutoSize = true;
-            this.lblSeparator.Location = new System.Drawing.Point(7, 16);
-            this.lblSeparator.Name = "lblSeparator";
-            this.lblSeparator.Size = new System.Drawing.Size(70, 16);
-            this.lblSeparator.TabIndex = 4;
-            this.lblSeparator.Text = "Separator:";
+            lblSeparator.AutoSize = true;
+            lblSeparator.Location = new System.Drawing.Point(6, 15);
+            lblSeparator.Name = "lblSeparator";
+            lblSeparator.Size = new System.Drawing.Size(60, 15);
+            lblSeparator.TabIndex = 4;
+            lblSeparator.Text = "Separator:";
             // 
             // txtReplaceToken
             // 
-            this.txtReplaceToken.Location = new System.Drawing.Point(121, 36);
-            this.txtReplaceToken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtReplaceToken.Name = "txtReplaceToken";
-            this.txtReplaceToken.Size = new System.Drawing.Size(124, 22);
-            this.txtReplaceToken.TabIndex = 5;
+            txtReplaceToken.Location = new System.Drawing.Point(106, 34);
+            txtReplaceToken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtReplaceToken.Name = "txtReplaceToken";
+            txtReplaceToken.Size = new System.Drawing.Size(109, 23);
+            txtReplaceToken.TabIndex = 5;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Replace Token:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(7, 36);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(85, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Replace Token:";
             // 
             // lblStat
             // 
-            this.lblStat.AutoSize = true;
-            this.lblStat.Location = new System.Drawing.Point(7, 84);
-            this.lblStat.Name = "lblStat";
-            this.lblStat.Size = new System.Drawing.Size(37, 16);
-            this.lblStat.TabIndex = 8;
-            this.lblStat.Text = "Start:";
+            lblStat.AutoSize = true;
+            lblStat.Location = new System.Drawing.Point(6, 79);
+            lblStat.Name = "lblStat";
+            lblStat.Size = new System.Drawing.Size(34, 15);
+            lblStat.TabIndex = 8;
+            lblStat.Text = "Start:";
             // 
             // txtStart
             // 
-            this.txtStart.Location = new System.Drawing.Point(55, 80);
-            this.txtStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtStart.Name = "txtStart";
-            this.txtStart.Size = new System.Drawing.Size(255, 22);
-            this.txtStart.TabIndex = 9;
+            txtStart.Location = new System.Drawing.Point(48, 75);
+            txtStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtStart.Name = "txtStart";
+            txtStart.Size = new System.Drawing.Size(224, 23);
+            txtStart.TabIndex = 9;
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(363, 80);
-            this.txtEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(255, 22);
-            this.txtEnd.TabIndex = 11;
+            txtEnd.Location = new System.Drawing.Point(318, 75);
+            txtEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtEnd.Name = "txtEnd";
+            txtEnd.Size = new System.Drawing.Size(224, 23);
+            txtEnd.TabIndex = 11;
             // 
             // lblEnd
             // 
-            this.lblEnd.AutoSize = true;
-            this.lblEnd.Location = new System.Drawing.Point(319, 84);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(34, 16);
-            this.lblEnd.TabIndex = 10;
-            this.lblEnd.Text = "End:";
+            lblEnd.AutoSize = true;
+            lblEnd.Location = new System.Drawing.Point(279, 79);
+            lblEnd.Name = "lblEnd";
+            lblEnd.Size = new System.Drawing.Size(30, 15);
+            lblEnd.TabIndex = 10;
+            lblEnd.Text = "End:";
             // 
             // btnConcatenateList
             // 
-            this.btnConcatenateList.Location = new System.Drawing.Point(633, 76);
-            this.btnConcatenateList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConcatenateList.Name = "btnConcatenateList";
-            this.btnConcatenateList.Size = new System.Drawing.Size(129, 31);
-            this.btnConcatenateList.TabIndex = 12;
-            this.btnConcatenateList.Text = "Concatenate List";
-            this.btnConcatenateList.UseVisualStyleBackColor = true;
-            this.btnConcatenateList.Click += new System.EventHandler(this.BtnConcatenateListClick);
+            btnConcatenateList.Location = new System.Drawing.Point(554, 71);
+            btnConcatenateList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnConcatenateList.Name = "btnConcatenateList";
+            btnConcatenateList.Size = new System.Drawing.Size(113, 29);
+            btnConcatenateList.TabIndex = 12;
+            btnConcatenateList.Text = "Concatenate List";
+            btnConcatenateList.UseVisualStyleBackColor = true;
+            btnConcatenateList.Click += BtnConcatenateListClick;
             // 
             // btnConcatenateReplaceList
             // 
-            this.btnConcatenateReplaceList.Location = new System.Drawing.Point(289, 9);
-            this.btnConcatenateReplaceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConcatenateReplaceList.Name = "btnConcatenateReplaceList";
-            this.btnConcatenateReplaceList.Size = new System.Drawing.Size(223, 31);
-            this.btnConcatenateReplaceList.TabIndex = 13;
-            this.btnConcatenateReplaceList.Text = "Concatenate and Replace List";
-            this.btnConcatenateReplaceList.UseVisualStyleBackColor = true;
-            this.btnConcatenateReplaceList.Click += new System.EventHandler(this.BtnConcatenateReplaceListClick);
+            btnConcatenateReplaceList.Location = new System.Drawing.Point(253, 8);
+            btnConcatenateReplaceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnConcatenateReplaceList.Name = "btnConcatenateReplaceList";
+            btnConcatenateReplaceList.Size = new System.Drawing.Size(195, 29);
+            btnConcatenateReplaceList.TabIndex = 13;
+            btnConcatenateReplaceList.Text = "Concatenate and Replace List";
+            btnConcatenateReplaceList.UseVisualStyleBackColor = true;
+            btnConcatenateReplaceList.Click += BtnConcatenateReplaceListClick;
             // 
             // txtTemplate
             // 
-            this.txtTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTemplate.Location = new System.Drawing.Point(7, 25);
-            this.txtTemplate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTemplate.Multiline = true;
-            this.txtTemplate.Name = "txtTemplate";
-            this.txtTemplate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTemplate.Size = new System.Drawing.Size(949, 228);
-            this.txtTemplate.TabIndex = 14;
+            txtTemplate.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtTemplate.Location = new System.Drawing.Point(6, 23);
+            txtTemplate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtTemplate.Multiline = true;
+            txtTemplate.Name = "txtTemplate";
+            txtTemplate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            txtTemplate.Size = new System.Drawing.Size(831, 214);
+            txtTemplate.TabIndex = 14;
             // 
             // lblInput
             // 
-            this.lblInput.AutoSize = true;
-            this.lblInput.Location = new System.Drawing.Point(9, 9);
-            this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(61, 16);
-            this.lblInput.TabIndex = 15;
-            this.lblInput.Text = "Input List:";
+            lblInput.AutoSize = true;
+            lblInput.Location = new System.Drawing.Point(8, 8);
+            lblInput.Name = "lblInput";
+            lblInput.Size = new System.Drawing.Size(59, 15);
+            lblInput.TabIndex = 15;
+            lblInput.Text = "Input List:";
             // 
             // lblTemplate
             // 
-            this.lblTemplate.AutoSize = true;
-            this.lblTemplate.Location = new System.Drawing.Point(7, 4);
-            this.lblTemplate.Name = "lblTemplate";
-            this.lblTemplate.Size = new System.Drawing.Size(68, 16);
-            this.lblTemplate.TabIndex = 16;
-            this.lblTemplate.Text = "Template:";
+            lblTemplate.AutoSize = true;
+            lblTemplate.Location = new System.Drawing.Point(6, 4);
+            lblTemplate.Name = "lblTemplate";
+            lblTemplate.Size = new System.Drawing.Size(58, 15);
+            lblTemplate.TabIndex = 16;
+            lblTemplate.Text = "Template:";
             // 
             // lblOutput
             // 
-            this.lblOutput.AutoSize = true;
-            this.lblOutput.Location = new System.Drawing.Point(7, 598);
-            this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(48, 16);
-            this.lblOutput.TabIndex = 17;
-            this.lblOutput.Text = "Output:";
+            lblOutput.AutoSize = true;
+            lblOutput.Location = new System.Drawing.Point(6, 561);
+            lblOutput.Name = "lblOutput";
+            lblOutput.Size = new System.Drawing.Size(48, 15);
+            lblOutput.TabIndex = 17;
+            lblOutput.Text = "Output:";
             // 
             // btnSortByAz
             // 
-            this.btnSortByAz.Location = new System.Drawing.Point(15, 555);
-            this.btnSortByAz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSortByAz.Name = "btnSortByAz";
-            this.btnSortByAz.Size = new System.Drawing.Size(139, 31);
-            this.btnSortByAz.TabIndex = 18;
-            this.btnSortByAz.Text = "Sort Output by AZ";
-            this.btnSortByAz.UseVisualStyleBackColor = true;
-            this.btnSortByAz.Click += new System.EventHandler(this.BtnSortByAzClick);
+            btnSortByAz.Location = new System.Drawing.Point(13, 520);
+            btnSortByAz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSortByAz.Name = "btnSortByAz";
+            btnSortByAz.Size = new System.Drawing.Size(122, 29);
+            btnSortByAz.TabIndex = 18;
+            btnSortByAz.Text = "Sort Output by AZ";
+            btnSortByAz.UseVisualStyleBackColor = true;
+            btnSortByAz.Click += BtnSortByAzClick;
             // 
             // btnSortByZa
             // 
-            this.btnSortByZa.Location = new System.Drawing.Point(159, 555);
-            this.btnSortByZa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSortByZa.Name = "btnSortByZa";
-            this.btnSortByZa.Size = new System.Drawing.Size(137, 31);
-            this.btnSortByZa.TabIndex = 19;
-            this.btnSortByZa.Text = "Sort Output by ZA";
-            this.btnSortByZa.UseVisualStyleBackColor = true;
-            this.btnSortByZa.Click += new System.EventHandler(this.BtnSortByZaClick);
+            btnSortByZa.Location = new System.Drawing.Point(139, 520);
+            btnSortByZa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSortByZa.Name = "btnSortByZa";
+            btnSortByZa.Size = new System.Drawing.Size(120, 29);
+            btnSortByZa.TabIndex = 19;
+            btnSortByZa.Text = "Sort Output by ZA";
+            btnSortByZa.UseVisualStyleBackColor = true;
+            btnSortByZa.Click += BtnSortByZaClick;
             // 
             // btnSetOutToIn
             // 
-            this.btnSetOutToIn.Location = new System.Drawing.Point(567, 555);
-            this.btnSetOutToIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSetOutToIn.Name = "btnSetOutToIn";
-            this.btnSetOutToIn.Size = new System.Drawing.Size(141, 31);
-            this.btnSetOutToIn.TabIndex = 20;
-            this.btnSetOutToIn.Text = "Set Output to Input";
-            this.btnSetOutToIn.UseVisualStyleBackColor = true;
-            this.btnSetOutToIn.Click += new System.EventHandler(this.BtnSetOutToIn_Click);
+            btnSetOutToIn.Location = new System.Drawing.Point(496, 520);
+            btnSetOutToIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSetOutToIn.Name = "btnSetOutToIn";
+            btnSetOutToIn.Size = new System.Drawing.Size(123, 29);
+            btnSetOutToIn.TabIndex = 20;
+            btnSetOutToIn.Text = "Set Output to Input";
+            btnSetOutToIn.UseVisualStyleBackColor = true;
+            btnSetOutToIn.Click += BtnSetOutToIn_Click;
             // 
             // btnSetOutToClipboard
             // 
-            this.btnSetOutToClipboard.Location = new System.Drawing.Point(713, 555);
-            this.btnSetOutToClipboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSetOutToClipboard.Name = "btnSetOutToClipboard";
-            this.btnSetOutToClipboard.Size = new System.Drawing.Size(169, 31);
-            this.btnSetOutToClipboard.TabIndex = 21;
-            this.btnSetOutToClipboard.Text = "Set Output to Clipboard";
-            this.btnSetOutToClipboard.UseVisualStyleBackColor = true;
-            this.btnSetOutToClipboard.Click += new System.EventHandler(this.BtnSetOutToClipboard_Click);
+            btnSetOutToClipboard.Location = new System.Drawing.Point(624, 520);
+            btnSetOutToClipboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSetOutToClipboard.Name = "btnSetOutToClipboard";
+            btnSetOutToClipboard.Size = new System.Drawing.Size(148, 29);
+            btnSetOutToClipboard.TabIndex = 21;
+            btnSetOutToClipboard.Text = "Set Output to Clipboard";
+            btnSetOutToClipboard.UseVisualStyleBackColor = true;
+            btnSetOutToClipboard.Click += BtnSetOutToClipboard_Click;
             // 
             // btnSplitReplaceList
             // 
-            this.btnSplitReplaceList.Location = new System.Drawing.Point(715, 9);
-            this.btnSplitReplaceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSplitReplaceList.Name = "btnSplitReplaceList";
-            this.btnSplitReplaceList.Size = new System.Drawing.Size(163, 31);
-            this.btnSplitReplaceList.TabIndex = 22;
-            this.btnSplitReplaceList.Text = "Split Replace List";
-            this.btnSplitReplaceList.UseVisualStyleBackColor = true;
-            this.btnSplitReplaceList.Click += new System.EventHandler(this.BtnSplitReplaceList_Click);
+            btnSplitReplaceList.Location = new System.Drawing.Point(626, 8);
+            btnSplitReplaceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSplitReplaceList.Name = "btnSplitReplaceList";
+            btnSplitReplaceList.Size = new System.Drawing.Size(143, 29);
+            btnSplitReplaceList.TabIndex = 22;
+            btnSplitReplaceList.Text = "Split Replace List";
+            btnSplitReplaceList.UseVisualStyleBackColor = true;
+            btnSplitReplaceList.Click += BtnSplitReplaceList_Click;
             // 
             // lblInnerSaparator
             // 
-            this.lblInnerSaparator.AutoSize = true;
-            this.lblInnerSaparator.Location = new System.Drawing.Point(539, 16);
-            this.lblInnerSaparator.Name = "lblInnerSaparator";
-            this.lblInnerSaparator.Size = new System.Drawing.Size(102, 16);
-            this.lblInnerSaparator.TabIndex = 24;
-            this.lblInnerSaparator.Text = "Inner Separator:";
+            lblInnerSaparator.AutoSize = true;
+            lblInnerSaparator.Location = new System.Drawing.Point(472, 15);
+            lblInnerSaparator.Name = "lblInnerSaparator";
+            lblInnerSaparator.Size = new System.Drawing.Size(90, 15);
+            lblInnerSaparator.TabIndex = 24;
+            lblInnerSaparator.Text = "Inner Separator:";
             // 
             // txtInnerSeparator
             // 
-            this.txtInnerSeparator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInnerSeparator.Location = new System.Drawing.Point(655, 12);
-            this.txtInnerSeparator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtInnerSeparator.Name = "txtInnerSeparator";
-            this.txtInnerSeparator.Size = new System.Drawing.Size(47, 20);
-            this.txtInnerSeparator.TabIndex = 23;
-            this.txtInnerSeparator.Text = ";";
+            txtInnerSeparator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            txtInnerSeparator.Location = new System.Drawing.Point(573, 11);
+            txtInnerSeparator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtInnerSeparator.Name = "txtInnerSeparator";
+            txtInnerSeparator.Size = new System.Drawing.Size(42, 20);
+            txtInnerSeparator.TabIndex = 23;
+            txtInnerSeparator.Text = ";";
             // 
             // btnPropertiesToInstace
             // 
-            this.btnPropertiesToInstace.Location = new System.Drawing.Point(381, 209);
-            this.btnPropertiesToInstace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPropertiesToInstace.Name = "btnPropertiesToInstace";
-            this.btnPropertiesToInstace.Size = new System.Drawing.Size(197, 31);
-            this.btnPropertiesToInstace.TabIndex = 25;
-            this.btnPropertiesToInstace.Text = "Properties To Instace";
-            this.btnPropertiesToInstace.UseVisualStyleBackColor = true;
-            this.btnPropertiesToInstace.Click += new System.EventHandler(this.BtnPropertiesToInstace_Click);
+            btnPropertiesToInstace.Location = new System.Drawing.Point(333, 196);
+            btnPropertiesToInstace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToInstace.Name = "btnPropertiesToInstace";
+            btnPropertiesToInstace.Size = new System.Drawing.Size(172, 29);
+            btnPropertiesToInstace.TabIndex = 25;
+            btnPropertiesToInstace.Text = "Properties To Instace";
+            btnPropertiesToInstace.UseVisualStyleBackColor = true;
+            btnPropertiesToInstace.Click += BtnPropertiesToInstace_Click;
             // 
             // lblVariableName
             // 
-            this.lblVariableName.AutoSize = true;
-            this.lblVariableName.Location = new System.Drawing.Point(18, 217);
-            this.lblVariableName.Name = "lblVariableName";
-            this.lblVariableName.Size = new System.Drawing.Size(101, 16);
-            this.lblVariableName.TabIndex = 27;
-            this.lblVariableName.Text = "Variable Name:";
+            lblVariableName.AutoSize = true;
+            lblVariableName.Location = new System.Drawing.Point(16, 203);
+            lblVariableName.Name = "lblVariableName";
+            lblVariableName.Size = new System.Drawing.Size(86, 15);
+            lblVariableName.TabIndex = 27;
+            lblVariableName.Text = "Variable Name:";
             // 
             // txtVariableName
             // 
-            this.txtVariableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVariableName.Location = new System.Drawing.Point(129, 213);
-            this.txtVariableName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtVariableName.Name = "txtVariableName";
-            this.txtVariableName.Size = new System.Drawing.Size(67, 20);
-            this.txtVariableName.TabIndex = 26;
-            this.txtVariableName.Text = "obj";
+            txtVariableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            txtVariableName.Location = new System.Drawing.Point(113, 200);
+            txtVariableName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtVariableName.Name = "txtVariableName";
+            txtVariableName.Size = new System.Drawing.Size(59, 20);
+            txtVariableName.TabIndex = 26;
+            txtVariableName.Text = "obj";
             // 
             // lblTypeName
             // 
-            this.lblTypeName.AutoSize = true;
-            this.lblTypeName.Location = new System.Drawing.Point(202, 217);
-            this.lblTypeName.Name = "lblTypeName";
-            this.lblTypeName.Size = new System.Drawing.Size(82, 16);
-            this.lblTypeName.TabIndex = 29;
-            this.lblTypeName.Text = "Type Name:";
+            lblTypeName.AutoSize = true;
+            lblTypeName.Location = new System.Drawing.Point(177, 203);
+            lblTypeName.Name = "lblTypeName";
+            lblTypeName.Size = new System.Drawing.Size(69, 15);
+            lblTypeName.TabIndex = 29;
+            lblTypeName.Text = "Type Name:";
             // 
             // txtTypeName
             // 
-            this.txtTypeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTypeName.Location = new System.Drawing.Point(294, 213);
-            this.txtTypeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTypeName.Name = "txtTypeName";
-            this.txtTypeName.Size = new System.Drawing.Size(67, 20);
-            this.txtTypeName.TabIndex = 28;
-            this.txtTypeName.Text = "Entity";
+            txtTypeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            txtTypeName.Location = new System.Drawing.Point(257, 200);
+            txtTypeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtTypeName.Name = "txtTypeName";
+            txtTypeName.Size = new System.Drawing.Size(59, 20);
+            txtTypeName.TabIndex = 28;
+            txtTypeName.Text = "Entity";
             // 
             // btnPropertiesToAssignment
             // 
-            this.btnPropertiesToAssignment.Location = new System.Drawing.Point(584, 209);
-            this.btnPropertiesToAssignment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPropertiesToAssignment.Name = "btnPropertiesToAssignment";
-            this.btnPropertiesToAssignment.Size = new System.Drawing.Size(197, 31);
-            this.btnPropertiesToAssignment.TabIndex = 30;
-            this.btnPropertiesToAssignment.Text = "Properties To Assignment";
-            this.btnPropertiesToAssignment.UseVisualStyleBackColor = true;
-            this.btnPropertiesToAssignment.Click += new System.EventHandler(this.btnPropertiesToAssignment_Click);
+            btnPropertiesToAssignment.Location = new System.Drawing.Point(511, 196);
+            btnPropertiesToAssignment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToAssignment.Name = "btnPropertiesToAssignment";
+            btnPropertiesToAssignment.Size = new System.Drawing.Size(172, 29);
+            btnPropertiesToAssignment.TabIndex = 30;
+            btnPropertiesToAssignment.Text = "Properties To Assignment";
+            btnPropertiesToAssignment.UseVisualStyleBackColor = true;
+            btnPropertiesToAssignment.Click += btnPropertiesToAssignment_Click;
             // 
             // tcOptions
             // 
-            this.tcOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tcOptions.Controls.Add(this.tpReplace);
-            this.tcOptions.Controls.Add(this.tpTemplate);
-            this.tcOptions.Controls.Add(this.tpToken);
-            this.tcOptions.Controls.Add(this.tpLoadList);
-            this.tcOptions.Controls.Add(this.tpAction);
-            this.tcOptions.Location = new System.Drawing.Point(13, 245);
-            this.tcOptions.Margin = new System.Windows.Forms.Padding(4);
-            this.tcOptions.Name = "tcOptions";
-            this.tcOptions.SelectedIndex = 0;
-            this.tcOptions.Size = new System.Drawing.Size(971, 304);
-            this.tcOptions.TabIndex = 31;
+            tcOptions.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tcOptions.Controls.Add(tpReplace);
+            tcOptions.Controls.Add(tpTemplate);
+            tcOptions.Controls.Add(tpToken);
+            tcOptions.Controls.Add(tpLoadList);
+            tcOptions.Controls.Add(tpAction);
+            tcOptions.Location = new System.Drawing.Point(11, 230);
+            tcOptions.Margin = new System.Windows.Forms.Padding(4);
+            tcOptions.Name = "tcOptions";
+            tcOptions.SelectedIndex = 0;
+            tcOptions.Size = new System.Drawing.Size(850, 285);
+            tcOptions.TabIndex = 31;
             // 
             // tpReplace
             // 
-            this.tpReplace.Controls.Add(this.label1);
-            this.tpReplace.Controls.Add(this.btnReplicate);
-            this.tpReplace.Controls.Add(this.lblQuantityReplicate);
-            this.tpReplace.Controls.Add(this.txtQuantityReplicate);
-            this.tpReplace.Controls.Add(this.btnConcatenateReplaceList);
-            this.tpReplace.Controls.Add(this.btnReplaceList);
-            this.tpReplace.Controls.Add(this.txtSeparator);
-            this.tpReplace.Controls.Add(this.lblSeparator);
-            this.tpReplace.Controls.Add(this.btnConcatenateList);
-            this.tpReplace.Controls.Add(this.txtEnd);
-            this.tpReplace.Controls.Add(this.lblEnd);
-            this.tpReplace.Controls.Add(this.txtStart);
-            this.tpReplace.Controls.Add(this.lblStat);
-            this.tpReplace.Controls.Add(this.lblInnerSaparator);
-            this.tpReplace.Controls.Add(this.btnSplitReplaceList);
-            this.tpReplace.Controls.Add(this.txtInnerSeparator);
-            this.tpReplace.Location = new System.Drawing.Point(4, 25);
-            this.tpReplace.Margin = new System.Windows.Forms.Padding(4);
-            this.tpReplace.Name = "tpReplace";
-            this.tpReplace.Padding = new System.Windows.Forms.Padding(4);
-            this.tpReplace.Size = new System.Drawing.Size(963, 275);
-            this.tpReplace.TabIndex = 0;
-            this.tpReplace.Text = "Options";
-            this.tpReplace.UseVisualStyleBackColor = true;
+            tpReplace.Controls.Add(label1);
+            tpReplace.Controls.Add(btnReplicate);
+            tpReplace.Controls.Add(lblQuantityReplicate);
+            tpReplace.Controls.Add(txtQuantityReplicate);
+            tpReplace.Controls.Add(btnConcatenateReplaceList);
+            tpReplace.Controls.Add(btnReplaceList);
+            tpReplace.Controls.Add(txtSeparator);
+            tpReplace.Controls.Add(lblSeparator);
+            tpReplace.Controls.Add(btnConcatenateList);
+            tpReplace.Controls.Add(txtEnd);
+            tpReplace.Controls.Add(lblEnd);
+            tpReplace.Controls.Add(txtStart);
+            tpReplace.Controls.Add(lblStat);
+            tpReplace.Controls.Add(lblInnerSaparator);
+            tpReplace.Controls.Add(btnSplitReplaceList);
+            tpReplace.Controls.Add(txtInnerSeparator);
+            tpReplace.Location = new System.Drawing.Point(4, 24);
+            tpReplace.Margin = new System.Windows.Forms.Padding(4);
+            tpReplace.Name = "tpReplace";
+            tpReplace.Padding = new System.Windows.Forms.Padding(4);
+            tpReplace.Size = new System.Drawing.Size(842, 257);
+            tpReplace.TabIndex = 0;
+            tpReplace.Text = "Options";
+            tpReplace.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 207);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 16);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Use [N] to contact the index and [C] matches it in character";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(32, 194);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(320, 15);
+            label1.TabIndex = 34;
+            label1.Text = "Use [N] to contact the index and [C] matches it in character";
             // 
             // btnReplicate
             // 
-            this.btnReplicate.Location = new System.Drawing.Point(304, 175);
-            this.btnReplicate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReplicate.Name = "btnReplicate";
-            this.btnReplicate.Size = new System.Drawing.Size(100, 28);
-            this.btnReplicate.TabIndex = 33;
-            this.btnReplicate.Text = "Replicate";
-            this.btnReplicate.UseVisualStyleBackColor = true;
-            this.btnReplicate.Click += new System.EventHandler(this.btnReplicate_Click);
+            btnReplicate.Location = new System.Drawing.Point(266, 164);
+            btnReplicate.Margin = new System.Windows.Forms.Padding(4);
+            btnReplicate.Name = "btnReplicate";
+            btnReplicate.Size = new System.Drawing.Size(88, 26);
+            btnReplicate.TabIndex = 33;
+            btnReplicate.Text = "Replicate";
+            btnReplicate.UseVisualStyleBackColor = true;
+            btnReplicate.Click += btnReplicate_Click;
             // 
             // lblQuantityReplicate
             // 
-            this.lblQuantityReplicate.AutoSize = true;
-            this.lblQuantityReplicate.Location = new System.Drawing.Point(13, 182);
-            this.lblQuantityReplicate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblQuantityReplicate.Name = "lblQuantityReplicate";
-            this.lblQuantityReplicate.Size = new System.Drawing.Size(130, 16);
-            this.lblQuantityReplicate.TabIndex = 32;
-            this.lblQuantityReplicate.Text = "Quantity to Replicate";
+            lblQuantityReplicate.AutoSize = true;
+            lblQuantityReplicate.Location = new System.Drawing.Point(11, 171);
+            lblQuantityReplicate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblQuantityReplicate.Name = "lblQuantityReplicate";
+            lblQuantityReplicate.Size = new System.Drawing.Size(118, 15);
+            lblQuantityReplicate.TabIndex = 32;
+            lblQuantityReplicate.Text = "Quantity to Replicate";
             // 
             // txtQuantityReplicate
             // 
-            this.txtQuantityReplicate.Location = new System.Drawing.Point(163, 178);
-            this.txtQuantityReplicate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtQuantityReplicate.Name = "txtQuantityReplicate";
-            this.txtQuantityReplicate.Size = new System.Drawing.Size(132, 22);
-            this.txtQuantityReplicate.TabIndex = 31;
+            txtQuantityReplicate.Location = new System.Drawing.Point(143, 167);
+            txtQuantityReplicate.Margin = new System.Windows.Forms.Padding(4);
+            txtQuantityReplicate.Name = "txtQuantityReplicate";
+            txtQuantityReplicate.Size = new System.Drawing.Size(116, 23);
+            txtQuantityReplicate.TabIndex = 31;
             // 
             // tpTemplate
             // 
-            this.tpTemplate.Controls.Add(this.lblTemplate);
-            this.tpTemplate.Controls.Add(this.txtTemplate);
-            this.tpTemplate.Location = new System.Drawing.Point(4, 25);
-            this.tpTemplate.Margin = new System.Windows.Forms.Padding(4);
-            this.tpTemplate.Name = "tpTemplate";
-            this.tpTemplate.Padding = new System.Windows.Forms.Padding(4);
-            this.tpTemplate.Size = new System.Drawing.Size(963, 275);
-            this.tpTemplate.TabIndex = 1;
-            this.tpTemplate.Text = "Template";
-            this.tpTemplate.UseVisualStyleBackColor = true;
+            tpTemplate.Controls.Add(lblTemplate);
+            tpTemplate.Controls.Add(txtTemplate);
+            tpTemplate.Location = new System.Drawing.Point(4, 24);
+            tpTemplate.Margin = new System.Windows.Forms.Padding(4);
+            tpTemplate.Name = "tpTemplate";
+            tpTemplate.Padding = new System.Windows.Forms.Padding(4);
+            tpTemplate.Size = new System.Drawing.Size(842, 257);
+            tpTemplate.TabIndex = 1;
+            tpTemplate.Text = "Template";
+            tpTemplate.UseVisualStyleBackColor = true;
             // 
             // tpToken
             // 
-            this.tpToken.Controls.Add(this.lbTokens);
-            this.tpToken.Controls.Add(this.btnLoadTokens);
-            this.tpToken.Controls.Add(this.btnClearTokens);
-            this.tpToken.Controls.Add(this.lblTokensInfo);
-            this.tpToken.Controls.Add(this.btnDeleteToken);
-            this.tpToken.Controls.Add(this.btnAddToken);
-            this.tpToken.Controls.Add(this.txtReplaceToken);
-            this.tpToken.Controls.Add(this.label2);
-            this.tpToken.Location = new System.Drawing.Point(4, 25);
-            this.tpToken.Margin = new System.Windows.Forms.Padding(4);
-            this.tpToken.Name = "tpToken";
-            this.tpToken.Padding = new System.Windows.Forms.Padding(4);
-            this.tpToken.Size = new System.Drawing.Size(963, 275);
-            this.tpToken.TabIndex = 2;
-            this.tpToken.Text = "Tokens";
-            this.tpToken.UseVisualStyleBackColor = true;
+            tpToken.Controls.Add(lbTokens);
+            tpToken.Controls.Add(btnLoadTokens);
+            tpToken.Controls.Add(btnClearTokens);
+            tpToken.Controls.Add(lblTokensInfo);
+            tpToken.Controls.Add(btnDeleteToken);
+            tpToken.Controls.Add(btnAddToken);
+            tpToken.Controls.Add(txtReplaceToken);
+            tpToken.Controls.Add(label2);
+            tpToken.Location = new System.Drawing.Point(4, 24);
+            tpToken.Margin = new System.Windows.Forms.Padding(4);
+            tpToken.Name = "tpToken";
+            tpToken.Padding = new System.Windows.Forms.Padding(4);
+            tpToken.Size = new System.Drawing.Size(842, 257);
+            tpToken.TabIndex = 2;
+            tpToken.Text = "Tokens";
+            tpToken.UseVisualStyleBackColor = true;
             // 
             // lbTokens
             // 
-            this.lbTokens.FormattingEnabled = true;
-            this.lbTokens.ItemHeight = 16;
-            this.lbTokens.Location = new System.Drawing.Point(16, 66);
-            this.lbTokens.Margin = new System.Windows.Forms.Padding(4);
-            this.lbTokens.Name = "lbTokens";
-            this.lbTokens.ScrollAlwaysVisible = true;
-            this.lbTokens.Size = new System.Drawing.Size(704, 148);
-            this.lbTokens.TabIndex = 23;
+            lbTokens.FormattingEnabled = true;
+            lbTokens.ItemHeight = 15;
+            lbTokens.Location = new System.Drawing.Point(14, 62);
+            lbTokens.Margin = new System.Windows.Forms.Padding(4);
+            lbTokens.Name = "lbTokens";
+            lbTokens.ScrollAlwaysVisible = true;
+            lbTokens.Size = new System.Drawing.Size(616, 139);
+            lbTokens.TabIndex = 23;
             // 
             // btnLoadTokens
             // 
-            this.btnLoadTokens.Location = new System.Drawing.Point(729, 105);
-            this.btnLoadTokens.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadTokens.Name = "btnLoadTokens";
-            this.btnLoadTokens.Size = new System.Drawing.Size(80, 28);
-            this.btnLoadTokens.TabIndex = 22;
-            this.btnLoadTokens.Text = "Load";
-            this.btnLoadTokens.UseVisualStyleBackColor = true;
-            this.btnLoadTokens.Click += new System.EventHandler(this.btnLoadTokens_Click);
+            btnLoadTokens.Location = new System.Drawing.Point(638, 98);
+            btnLoadTokens.Margin = new System.Windows.Forms.Padding(4);
+            btnLoadTokens.Name = "btnLoadTokens";
+            btnLoadTokens.Size = new System.Drawing.Size(70, 26);
+            btnLoadTokens.TabIndex = 22;
+            btnLoadTokens.Text = "Load";
+            btnLoadTokens.UseVisualStyleBackColor = true;
+            btnLoadTokens.Click += btnLoadTokens_Click;
             // 
             // btnClearTokens
             // 
-            this.btnClearTokens.Location = new System.Drawing.Point(729, 69);
-            this.btnClearTokens.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClearTokens.Name = "btnClearTokens";
-            this.btnClearTokens.Size = new System.Drawing.Size(80, 28);
-            this.btnClearTokens.TabIndex = 21;
-            this.btnClearTokens.Text = "Clear";
-            this.btnClearTokens.UseVisualStyleBackColor = true;
-            this.btnClearTokens.Click += new System.EventHandler(this.btnClearTokens_Click);
+            btnClearTokens.Location = new System.Drawing.Point(638, 65);
+            btnClearTokens.Margin = new System.Windows.Forms.Padding(4);
+            btnClearTokens.Name = "btnClearTokens";
+            btnClearTokens.Size = new System.Drawing.Size(70, 26);
+            btnClearTokens.TabIndex = 21;
+            btnClearTokens.Text = "Clear";
+            btnClearTokens.UseVisualStyleBackColor = true;
+            btnClearTokens.Click += btnClearTokens_Click;
             // 
             // lblTokensInfo
             // 
-            this.lblTokensInfo.AutoSize = true;
-            this.lblTokensInfo.Location = new System.Drawing.Point(12, 219);
-            this.lblTokensInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTokensInfo.Name = "lblTokensInfo";
-            this.lblTokensInfo.Size = new System.Drawing.Size(687, 32);
-            this.lblTokensInfo.TabIndex = 20;
-            this.lblTokensInfo.Text = "The tokens are used by the index of the corresponding position in the data line, " +
-    "first token for the first item and so on; \r\nTo delete select from the list and u" +
-    "se the button";
+            lblTokensInfo.AutoSize = true;
+            lblTokensInfo.Location = new System.Drawing.Point(10, 205);
+            lblTokensInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTokensInfo.Name = "lblTokensInfo";
+            lblTokensInfo.Size = new System.Drawing.Size(628, 30);
+            lblTokensInfo.TabIndex = 20;
+            lblTokensInfo.Text = "The tokens are used by the index of the corresponding position in the data line, first token for the first item and so on; \r\nTo delete select from the list and use the button";
             // 
             // btnDeleteToken
             // 
-            this.btnDeleteToken.Location = new System.Drawing.Point(729, 182);
-            this.btnDeleteToken.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDeleteToken.Name = "btnDeleteToken";
-            this.btnDeleteToken.Size = new System.Drawing.Size(80, 28);
-            this.btnDeleteToken.TabIndex = 19;
-            this.btnDeleteToken.Text = "Delete";
-            this.btnDeleteToken.UseVisualStyleBackColor = true;
-            this.btnDeleteToken.Click += new System.EventHandler(this.btnDeleteToken_Click);
+            btnDeleteToken.Location = new System.Drawing.Point(638, 171);
+            btnDeleteToken.Margin = new System.Windows.Forms.Padding(4);
+            btnDeleteToken.Name = "btnDeleteToken";
+            btnDeleteToken.Size = new System.Drawing.Size(70, 26);
+            btnDeleteToken.TabIndex = 19;
+            btnDeleteToken.Text = "Delete";
+            btnDeleteToken.UseVisualStyleBackColor = true;
+            btnDeleteToken.Click += btnDeleteToken_Click;
             // 
             // btnAddToken
             // 
-            this.btnAddToken.Location = new System.Drawing.Point(253, 33);
-            this.btnAddToken.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddToken.Name = "btnAddToken";
-            this.btnAddToken.Size = new System.Drawing.Size(60, 28);
-            this.btnAddToken.TabIndex = 17;
-            this.btnAddToken.Text = "Add";
-            this.btnAddToken.UseVisualStyleBackColor = true;
-            this.btnAddToken.Click += new System.EventHandler(this.btnAddToken_Click);
+            btnAddToken.Location = new System.Drawing.Point(221, 31);
+            btnAddToken.Margin = new System.Windows.Forms.Padding(4);
+            btnAddToken.Name = "btnAddToken";
+            btnAddToken.Size = new System.Drawing.Size(52, 26);
+            btnAddToken.TabIndex = 17;
+            btnAddToken.Text = "Add";
+            btnAddToken.UseVisualStyleBackColor = true;
+            btnAddToken.Click += btnAddToken_Click;
             // 
             // tpLoadList
             // 
-            this.tpLoadList.Controls.Add(this.llInfo);
-            this.tpLoadList.Controls.Add(this.btnParserJson);
-            this.tpLoadList.Controls.Add(this.txtXmlSelect);
-            this.tpLoadList.Controls.Add(this.lblXmlSelect);
-            this.tpLoadList.Controls.Add(this.txtJsonSelect);
-            this.tpLoadList.Controls.Add(this.lblJsonSelect);
-            this.tpLoadList.Controls.Add(this.btnLoadListXml);
-            this.tpLoadList.Controls.Add(this.txtPathXml);
-            this.tpLoadList.Controls.Add(this.lblPathXml);
-            this.tpLoadList.Controls.Add(this.btnLoadListJson);
-            this.tpLoadList.Controls.Add(this.txtPathJson);
-            this.tpLoadList.Controls.Add(this.lblPathJson);
-            this.tpLoadList.Controls.Add(this.btnLoadCsv);
-            this.tpLoadList.Controls.Add(this.txtPathCsv);
-            this.tpLoadList.Controls.Add(this.lblPathCsv);
-            this.tpLoadList.Location = new System.Drawing.Point(4, 25);
-            this.tpLoadList.Margin = new System.Windows.Forms.Padding(4);
-            this.tpLoadList.Name = "tpLoadList";
-            this.tpLoadList.Padding = new System.Windows.Forms.Padding(4);
-            this.tpLoadList.Size = new System.Drawing.Size(963, 275);
-            this.tpLoadList.TabIndex = 3;
-            this.tpLoadList.Text = "Load List";
-            this.tpLoadList.UseVisualStyleBackColor = true;
+            tpLoadList.Controls.Add(llInfo);
+            tpLoadList.Controls.Add(btnParserJson);
+            tpLoadList.Controls.Add(txtXmlSelect);
+            tpLoadList.Controls.Add(lblXmlSelect);
+            tpLoadList.Controls.Add(txtJsonSelect);
+            tpLoadList.Controls.Add(lblJsonSelect);
+            tpLoadList.Controls.Add(btnLoadListXml);
+            tpLoadList.Controls.Add(txtPathXml);
+            tpLoadList.Controls.Add(lblPathXml);
+            tpLoadList.Controls.Add(btnLoadListJson);
+            tpLoadList.Controls.Add(txtPathJson);
+            tpLoadList.Controls.Add(lblPathJson);
+            tpLoadList.Controls.Add(btnLoadCsv);
+            tpLoadList.Controls.Add(txtPathCsv);
+            tpLoadList.Controls.Add(lblPathCsv);
+            tpLoadList.Location = new System.Drawing.Point(4, 24);
+            tpLoadList.Margin = new System.Windows.Forms.Padding(4);
+            tpLoadList.Name = "tpLoadList";
+            tpLoadList.Padding = new System.Windows.Forms.Padding(4);
+            tpLoadList.Size = new System.Drawing.Size(842, 257);
+            tpLoadList.TabIndex = 3;
+            tpLoadList.Text = "Load List";
+            tpLoadList.UseVisualStyleBackColor = true;
             // 
             // llInfo
             // 
-            this.llInfo.AutoSize = true;
-            this.llInfo.Location = new System.Drawing.Point(12, 133);
-            this.llInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.llInfo.Name = "llInfo";
-            this.llInfo.Size = new System.Drawing.Size(360, 16);
-            this.llInfo.TabIndex = 36;
-            this.llInfo.TabStop = true;
-            this.llInfo.Text = "https://www.newtonsoft.com/json/help/html/SelectToken.htm";
-            this.llInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llInfo_LinkClicked);
+            llInfo.AutoSize = true;
+            llInfo.Location = new System.Drawing.Point(10, 125);
+            llInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            llInfo.Name = "llInfo";
+            llInfo.Size = new System.Drawing.Size(341, 15);
+            llInfo.TabIndex = 36;
+            llInfo.TabStop = true;
+            llInfo.Text = "https://www.newtonsoft.com/json/help/html/SelectToken.htm";
+            llInfo.LinkClicked += llInfo_LinkClicked;
             // 
             // btnParserJson
             // 
-            this.btnParserJson.Location = new System.Drawing.Point(656, 102);
-            this.btnParserJson.Margin = new System.Windows.Forms.Padding(4);
-            this.btnParserJson.Name = "btnParserJson";
-            this.btnParserJson.Size = new System.Drawing.Size(100, 28);
-            this.btnParserJson.TabIndex = 35;
-            this.btnParserJson.Text = "Parser Json";
-            this.btnParserJson.UseVisualStyleBackColor = true;
-            this.btnParserJson.Click += new System.EventHandler(this.btnParserJson_Click);
+            btnParserJson.Location = new System.Drawing.Point(574, 96);
+            btnParserJson.Margin = new System.Windows.Forms.Padding(4);
+            btnParserJson.Name = "btnParserJson";
+            btnParserJson.Size = new System.Drawing.Size(88, 26);
+            btnParserJson.TabIndex = 35;
+            btnParserJson.Text = "Parser Json";
+            btnParserJson.UseVisualStyleBackColor = true;
+            btnParserJson.Click += btnParserJson_Click;
             // 
             // txtXmlSelect
             // 
-            this.txtXmlSelect.Location = new System.Drawing.Point(115, 215);
-            this.txtXmlSelect.Margin = new System.Windows.Forms.Padding(4);
-            this.txtXmlSelect.Name = "txtXmlSelect";
-            this.txtXmlSelect.Size = new System.Drawing.Size(532, 22);
-            this.txtXmlSelect.TabIndex = 12;
+            txtXmlSelect.Location = new System.Drawing.Point(101, 202);
+            txtXmlSelect.Margin = new System.Windows.Forms.Padding(4);
+            txtXmlSelect.Name = "txtXmlSelect";
+            txtXmlSelect.Size = new System.Drawing.Size(466, 23);
+            txtXmlSelect.TabIndex = 12;
             // 
             // lblXmlSelect
             // 
-            this.lblXmlSelect.AutoSize = true;
-            this.lblXmlSelect.Location = new System.Drawing.Point(12, 219);
-            this.lblXmlSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXmlSelect.Name = "lblXmlSelect";
-            this.lblXmlSelect.Size = new System.Drawing.Size(77, 16);
-            this.lblXmlSelect.TabIndex = 11;
-            this.lblXmlSelect.Text = "XML Select:";
+            lblXmlSelect.AutoSize = true;
+            lblXmlSelect.Location = new System.Drawing.Point(10, 205);
+            lblXmlSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblXmlSelect.Name = "lblXmlSelect";
+            lblXmlSelect.Size = new System.Drawing.Size(68, 15);
+            lblXmlSelect.TabIndex = 11;
+            lblXmlSelect.Text = "XML Select:";
             // 
             // txtJsonSelect
             // 
-            this.txtJsonSelect.Location = new System.Drawing.Point(115, 105);
-            this.txtJsonSelect.Margin = new System.Windows.Forms.Padding(4);
-            this.txtJsonSelect.Name = "txtJsonSelect";
-            this.txtJsonSelect.Size = new System.Drawing.Size(532, 22);
-            this.txtJsonSelect.TabIndex = 10;
+            txtJsonSelect.Location = new System.Drawing.Point(101, 98);
+            txtJsonSelect.Margin = new System.Windows.Forms.Padding(4);
+            txtJsonSelect.Name = "txtJsonSelect";
+            txtJsonSelect.Size = new System.Drawing.Size(466, 23);
+            txtJsonSelect.TabIndex = 10;
             // 
             // lblJsonSelect
             // 
-            this.lblJsonSelect.AutoSize = true;
-            this.lblJsonSelect.Location = new System.Drawing.Point(12, 108);
-            this.lblJsonSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblJsonSelect.Name = "lblJsonSelect";
-            this.lblJsonSelect.Size = new System.Drawing.Size(87, 16);
-            this.lblJsonSelect.TabIndex = 9;
-            this.lblJsonSelect.Text = "JSON Select:";
+            lblJsonSelect.AutoSize = true;
+            lblJsonSelect.Location = new System.Drawing.Point(10, 101);
+            lblJsonSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblJsonSelect.Name = "lblJsonSelect";
+            lblJsonSelect.Size = new System.Drawing.Size(72, 15);
+            lblJsonSelect.TabIndex = 9;
+            lblJsonSelect.Text = "JSON Select:";
             // 
             // btnLoadListXml
             // 
-            this.btnLoadListXml.Location = new System.Drawing.Point(656, 181);
-            this.btnLoadListXml.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadListXml.Name = "btnLoadListXml";
-            this.btnLoadListXml.Size = new System.Drawing.Size(100, 28);
-            this.btnLoadListXml.TabIndex = 8;
-            this.btnLoadListXml.Text = "Load XML";
-            this.btnLoadListXml.UseVisualStyleBackColor = true;
-            this.btnLoadListXml.Click += new System.EventHandler(this.btnLoadListXml_Click);
+            btnLoadListXml.Location = new System.Drawing.Point(574, 170);
+            btnLoadListXml.Margin = new System.Windows.Forms.Padding(4);
+            btnLoadListXml.Name = "btnLoadListXml";
+            btnLoadListXml.Size = new System.Drawing.Size(88, 26);
+            btnLoadListXml.TabIndex = 8;
+            btnLoadListXml.Text = "Load XML";
+            btnLoadListXml.UseVisualStyleBackColor = true;
+            btnLoadListXml.Click += btnLoadListXml_Click;
             // 
             // txtPathXml
             // 
-            this.txtPathXml.Location = new System.Drawing.Point(92, 183);
-            this.txtPathXml.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPathXml.Name = "txtPathXml";
-            this.txtPathXml.Size = new System.Drawing.Size(555, 22);
-            this.txtPathXml.TabIndex = 7;
+            txtPathXml.Location = new System.Drawing.Point(80, 172);
+            txtPathXml.Margin = new System.Windows.Forms.Padding(4);
+            txtPathXml.Name = "txtPathXml";
+            txtPathXml.Size = new System.Drawing.Size(486, 23);
+            txtPathXml.TabIndex = 7;
             // 
             // lblPathXml
             // 
-            this.lblPathXml.AutoSize = true;
-            this.lblPathXml.Location = new System.Drawing.Point(9, 187);
-            this.lblPathXml.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPathXml.Name = "lblPathXml";
-            this.lblPathXml.Size = new System.Drawing.Size(66, 16);
-            this.lblPathXml.TabIndex = 6;
-            this.lblPathXml.Text = "Path XML:";
+            lblPathXml.AutoSize = true;
+            lblPathXml.Location = new System.Drawing.Point(8, 175);
+            lblPathXml.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPathXml.Name = "lblPathXml";
+            lblPathXml.Size = new System.Drawing.Size(61, 15);
+            lblPathXml.TabIndex = 6;
+            lblPathXml.Text = "Path XML:";
             // 
             // btnLoadListJson
             // 
-            this.btnLoadListJson.Location = new System.Drawing.Point(656, 66);
-            this.btnLoadListJson.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadListJson.Name = "btnLoadListJson";
-            this.btnLoadListJson.Size = new System.Drawing.Size(100, 28);
-            this.btnLoadListJson.TabIndex = 5;
-            this.btnLoadListJson.Text = "Load JSON";
-            this.btnLoadListJson.UseVisualStyleBackColor = true;
-            this.btnLoadListJson.Click += new System.EventHandler(this.btnLoadListJson_Click);
+            btnLoadListJson.Location = new System.Drawing.Point(574, 62);
+            btnLoadListJson.Margin = new System.Windows.Forms.Padding(4);
+            btnLoadListJson.Name = "btnLoadListJson";
+            btnLoadListJson.Size = new System.Drawing.Size(88, 26);
+            btnLoadListJson.TabIndex = 5;
+            btnLoadListJson.Text = "Load JSON";
+            btnLoadListJson.UseVisualStyleBackColor = true;
+            btnLoadListJson.Click += btnLoadListJson_Click;
             // 
             // txtPathJson
             // 
-            this.txtPathJson.Location = new System.Drawing.Point(92, 73);
-            this.txtPathJson.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPathJson.Name = "txtPathJson";
-            this.txtPathJson.Size = new System.Drawing.Size(555, 22);
-            this.txtPathJson.TabIndex = 4;
+            txtPathJson.Location = new System.Drawing.Point(80, 68);
+            txtPathJson.Margin = new System.Windows.Forms.Padding(4);
+            txtPathJson.Name = "txtPathJson";
+            txtPathJson.Size = new System.Drawing.Size(486, 23);
+            txtPathJson.TabIndex = 4;
             // 
             // lblPathJson
             // 
-            this.lblPathJson.AutoSize = true;
-            this.lblPathJson.Location = new System.Drawing.Point(9, 76);
-            this.lblPathJson.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPathJson.Name = "lblPathJson";
-            this.lblPathJson.Size = new System.Drawing.Size(76, 16);
-            this.lblPathJson.TabIndex = 3;
-            this.lblPathJson.Text = "Path JSON:";
+            lblPathJson.AutoSize = true;
+            lblPathJson.Location = new System.Drawing.Point(8, 71);
+            lblPathJson.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPathJson.Name = "lblPathJson";
+            lblPathJson.Size = new System.Drawing.Size(65, 15);
+            lblPathJson.TabIndex = 3;
+            lblPathJson.Text = "Path JSON:";
             // 
             // btnLoadCsv
             // 
-            this.btnLoadCsv.Location = new System.Drawing.Point(656, 18);
-            this.btnLoadCsv.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadCsv.Name = "btnLoadCsv";
-            this.btnLoadCsv.Size = new System.Drawing.Size(100, 28);
-            this.btnLoadCsv.TabIndex = 2;
-            this.btnLoadCsv.Text = "Load CSV";
-            this.btnLoadCsv.UseVisualStyleBackColor = true;
-            this.btnLoadCsv.Click += new System.EventHandler(this.btnLoadCsv_Click);
+            btnLoadCsv.Location = new System.Drawing.Point(574, 17);
+            btnLoadCsv.Margin = new System.Windows.Forms.Padding(4);
+            btnLoadCsv.Name = "btnLoadCsv";
+            btnLoadCsv.Size = new System.Drawing.Size(88, 26);
+            btnLoadCsv.TabIndex = 2;
+            btnLoadCsv.Text = "Load CSV";
+            btnLoadCsv.UseVisualStyleBackColor = true;
+            btnLoadCsv.Click += btnLoadCsv_Click;
             // 
             // txtPathCsv
             // 
-            this.txtPathCsv.Location = new System.Drawing.Point(92, 21);
-            this.txtPathCsv.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPathCsv.Name = "txtPathCsv";
-            this.txtPathCsv.Size = new System.Drawing.Size(555, 22);
-            this.txtPathCsv.TabIndex = 1;
+            txtPathCsv.Location = new System.Drawing.Point(80, 20);
+            txtPathCsv.Margin = new System.Windows.Forms.Padding(4);
+            txtPathCsv.Name = "txtPathCsv";
+            txtPathCsv.Size = new System.Drawing.Size(486, 23);
+            txtPathCsv.TabIndex = 1;
             // 
             // lblPathCsv
             // 
-            this.lblPathCsv.AutoSize = true;
-            this.lblPathCsv.Location = new System.Drawing.Point(9, 25);
-            this.lblPathCsv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPathCsv.Name = "lblPathCsv";
-            this.lblPathCsv.Size = new System.Drawing.Size(67, 16);
-            this.lblPathCsv.TabIndex = 0;
-            this.lblPathCsv.Text = "Path CSV:";
+            lblPathCsv.AutoSize = true;
+            lblPathCsv.Location = new System.Drawing.Point(8, 23);
+            lblPathCsv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPathCsv.Name = "lblPathCsv";
+            lblPathCsv.Size = new System.Drawing.Size(58, 15);
+            lblPathCsv.TabIndex = 0;
+            lblPathCsv.Text = "Path CSV:";
             // 
             // tpAction
             // 
-            this.tpAction.Controls.Add(this.txtClassName);
-            this.tpAction.Controls.Add(this.lblClassName);
-            this.tpAction.Controls.Add(this.btnClassToMap);
-            this.tpAction.Controls.Add(this.btnPropertiesToListWithText);
-            this.tpAction.Controls.Add(this.btnCheckSqlInsert);
-            this.tpAction.Controls.Add(this.lblTypeName);
-            this.tpAction.Controls.Add(this.btnJsonToClass);
-            this.tpAction.Controls.Add(this.btnPropertiesToList);
-            this.tpAction.Controls.Add(this.btnPropertiesToAssignment);
-            this.tpAction.Controls.Add(this.btnTableSqlToClass);
-            this.tpAction.Controls.Add(this.txtTypeName);
-            this.tpAction.Controls.Add(this.btnPropertiesToInstace);
-            this.tpAction.Controls.Add(this.txtVariableName);
-            this.tpAction.Controls.Add(this.lblVariableName);
-            this.tpAction.Location = new System.Drawing.Point(4, 25);
-            this.tpAction.Name = "tpAction";
-            this.tpAction.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAction.Size = new System.Drawing.Size(963, 275);
-            this.tpAction.TabIndex = 4;
-            this.tpAction.Text = "Custom Actions";
-            this.tpAction.UseVisualStyleBackColor = true;
+            tpAction.Controls.Add(btnTableToClassWithJP);
+            tpAction.Controls.Add(txtClassName);
+            tpAction.Controls.Add(lblClassName);
+            tpAction.Controls.Add(btnClassToMap);
+            tpAction.Controls.Add(btnPropertiesToListWithText);
+            tpAction.Controls.Add(btnCheckSqlInsert);
+            tpAction.Controls.Add(lblTypeName);
+            tpAction.Controls.Add(btnJsonToClass);
+            tpAction.Controls.Add(btnPropertiesToList);
+            tpAction.Controls.Add(btnPropertiesToAssignment);
+            tpAction.Controls.Add(btnTableSqlToClass);
+            tpAction.Controls.Add(txtTypeName);
+            tpAction.Controls.Add(btnPropertiesToInstace);
+            tpAction.Controls.Add(txtVariableName);
+            tpAction.Controls.Add(lblVariableName);
+            tpAction.Location = new System.Drawing.Point(4, 24);
+            tpAction.Name = "tpAction";
+            tpAction.Padding = new System.Windows.Forms.Padding(3);
+            tpAction.Size = new System.Drawing.Size(842, 257);
+            tpAction.TabIndex = 4;
+            tpAction.Text = "Custom Actions";
+            tpAction.UseVisualStyleBackColor = true;
+            // 
+            // btnTableToClassWithJP
+            // 
+            btnTableToClassWithJP.Location = new System.Drawing.Point(177, 71);
+            btnTableToClassWithJP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnTableToClassWithJP.Name = "btnTableToClassWithJP";
+            btnTableToClassWithJP.Size = new System.Drawing.Size(272, 29);
+            btnTableToClassWithJP.TabIndex = 41;
+            btnTableToClassWithJP.Text = "Table To Class With JSON Property";
+            btnTableToClassWithJP.UseVisualStyleBackColor = true;
+            btnTableToClassWithJP.Click += btnTableToClassWithJP_Click;
             // 
             // txtClassName
             // 
-            this.txtClassName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClassName.Location = new System.Drawing.Point(300, 138);
-            this.txtClassName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(126, 20);
-            this.txtClassName.TabIndex = 35;
-            this.txtClassName.Text = "Class1";
+            txtClassName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            txtClassName.Location = new System.Drawing.Point(262, 129);
+            txtClassName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtClassName.Name = "txtClassName";
+            txtClassName.Size = new System.Drawing.Size(111, 20);
+            txtClassName.TabIndex = 35;
+            txtClassName.Text = "Class1";
             // 
             // lblClassName
             // 
-            this.lblClassName.AutoSize = true;
-            this.lblClassName.Location = new System.Drawing.Point(210, 139);
-            this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(84, 16);
-            this.lblClassName.TabIndex = 36;
-            this.lblClassName.Text = "Class Name:";
+            lblClassName.AutoSize = true;
+            lblClassName.Location = new System.Drawing.Point(184, 130);
+            lblClassName.Name = "lblClassName";
+            lblClassName.Size = new System.Drawing.Size(72, 15);
+            lblClassName.TabIndex = 36;
+            lblClassName.Text = "Class Name:";
             // 
             // btnClassToMap
             // 
-            this.btnClassToMap.Location = new System.Drawing.Point(26, 132);
-            this.btnClassToMap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClassToMap.Name = "btnClassToMap";
-            this.btnClassToMap.Size = new System.Drawing.Size(163, 31);
-            this.btnClassToMap.TabIndex = 40;
-            this.btnClassToMap.Text = "Class To EF Map";
-            this.btnClassToMap.UseVisualStyleBackColor = true;
-            this.btnClassToMap.Click += new System.EventHandler(this.btnClassToMap_Click);
+            btnClassToMap.Location = new System.Drawing.Point(23, 124);
+            btnClassToMap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnClassToMap.Name = "btnClassToMap";
+            btnClassToMap.Size = new System.Drawing.Size(143, 29);
+            btnClassToMap.TabIndex = 40;
+            btnClassToMap.Text = "Class To EF Map";
+            btnClassToMap.UseVisualStyleBackColor = true;
+            btnClassToMap.Click += btnClassToMap_Click;
             // 
             // btnPropertiesToListWithText
             // 
-            this.btnPropertiesToListWithText.Location = new System.Drawing.Point(507, 24);
-            this.btnPropertiesToListWithText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPropertiesToListWithText.Name = "btnPropertiesToListWithText";
-            this.btnPropertiesToListWithText.Size = new System.Drawing.Size(247, 31);
-            this.btnPropertiesToListWithText.TabIndex = 37;
-            this.btnPropertiesToListWithText.Text = "Properties To List With Text";
-            this.btnPropertiesToListWithText.UseVisualStyleBackColor = true;
-            this.btnPropertiesToListWithText.Click += new System.EventHandler(this.btnPropertiesToListWithText_Click);
+            btnPropertiesToListWithText.Location = new System.Drawing.Point(444, 22);
+            btnPropertiesToListWithText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToListWithText.Name = "btnPropertiesToListWithText";
+            btnPropertiesToListWithText.Size = new System.Drawing.Size(216, 29);
+            btnPropertiesToListWithText.TabIndex = 37;
+            btnPropertiesToListWithText.Text = "Properties To List With Text";
+            btnPropertiesToListWithText.UseVisualStyleBackColor = true;
+            btnPropertiesToListWithText.Click += btnPropertiesToListWithText_Click;
             // 
             // btnCheckSqlInsert
             // 
-            this.btnCheckSqlInsert.Location = new System.Drawing.Point(26, 76);
-            this.btnCheckSqlInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCheckSqlInsert.Name = "btnCheckSqlInsert";
-            this.btnCheckSqlInsert.Size = new System.Drawing.Size(163, 31);
-            this.btnCheckSqlInsert.TabIndex = 35;
-            this.btnCheckSqlInsert.Text = "Check Sql Insert";
-            this.btnCheckSqlInsert.UseVisualStyleBackColor = true;
-            this.btnCheckSqlInsert.Click += new System.EventHandler(this.btnCheckSqlInsert_Click);
+            btnCheckSqlInsert.Location = new System.Drawing.Point(23, 71);
+            btnCheckSqlInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCheckSqlInsert.Name = "btnCheckSqlInsert";
+            btnCheckSqlInsert.Size = new System.Drawing.Size(143, 29);
+            btnCheckSqlInsert.TabIndex = 35;
+            btnCheckSqlInsert.Text = "Check Sql Insert";
+            btnCheckSqlInsert.UseVisualStyleBackColor = true;
+            btnCheckSqlInsert.Click += btnCheckSqlInsert_Click;
             // 
             // btnJsonToClass
             // 
-            this.btnJsonToClass.Location = new System.Drawing.Point(195, 24);
-            this.btnJsonToClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnJsonToClass.Name = "btnJsonToClass";
-            this.btnJsonToClass.Size = new System.Drawing.Size(196, 31);
-            this.btnJsonToClass.TabIndex = 38;
-            this.btnJsonToClass.Text = "JSON To Class";
-            this.btnJsonToClass.UseVisualStyleBackColor = true;
-            this.btnJsonToClass.Click += new System.EventHandler(this.btnJsonToClass_Click);
+            btnJsonToClass.Location = new System.Drawing.Point(171, 22);
+            btnJsonToClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnJsonToClass.Name = "btnJsonToClass";
+            btnJsonToClass.Size = new System.Drawing.Size(172, 29);
+            btnJsonToClass.TabIndex = 38;
+            btnJsonToClass.Text = "JSON To Class";
+            btnJsonToClass.UseVisualStyleBackColor = true;
+            btnJsonToClass.Click += btnJsonToClass_Click;
             // 
             // btnPropertiesToList
             // 
-            this.btnPropertiesToList.Location = new System.Drawing.Point(760, 24);
-            this.btnPropertiesToList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPropertiesToList.Name = "btnPropertiesToList";
-            this.btnPropertiesToList.Size = new System.Drawing.Size(197, 31);
-            this.btnPropertiesToList.TabIndex = 36;
-            this.btnPropertiesToList.Text = "Properties To List";
-            this.btnPropertiesToList.UseVisualStyleBackColor = true;
-            this.btnPropertiesToList.Click += new System.EventHandler(this.btnPropertiesToList_Click);
+            btnPropertiesToList.Location = new System.Drawing.Point(665, 22);
+            btnPropertiesToList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToList.Name = "btnPropertiesToList";
+            btnPropertiesToList.Size = new System.Drawing.Size(172, 29);
+            btnPropertiesToList.TabIndex = 36;
+            btnPropertiesToList.Text = "Properties To List";
+            btnPropertiesToList.UseVisualStyleBackColor = true;
+            btnPropertiesToList.Click += btnPropertiesToList_Click;
             // 
             // btnTableSqlToClass
             // 
-            this.btnTableSqlToClass.Location = new System.Drawing.Point(26, 24);
-            this.btnTableSqlToClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTableSqlToClass.Name = "btnTableSqlToClass";
-            this.btnTableSqlToClass.Size = new System.Drawing.Size(163, 31);
-            this.btnTableSqlToClass.TabIndex = 39;
-            this.btnTableSqlToClass.Text = "Table To Class";
-            this.btnTableSqlToClass.UseVisualStyleBackColor = true;
-            this.btnTableSqlToClass.Click += new System.EventHandler(this.btnTableSqlToClass_Click);
+            btnTableSqlToClass.Location = new System.Drawing.Point(23, 22);
+            btnTableSqlToClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnTableSqlToClass.Name = "btnTableSqlToClass";
+            btnTableSqlToClass.Size = new System.Drawing.Size(143, 29);
+            btnTableSqlToClass.TabIndex = 39;
+            btnTableSqlToClass.Text = "Table To Class";
+            btnTableSqlToClass.UseVisualStyleBackColor = true;
+            btnTableSqlToClass.Click += btnTableSqlToClass_Click;
             // 
             // btnSortInputByZa
             // 
-            this.btnSortInputByZa.Location = new System.Drawing.Point(436, 555);
-            this.btnSortInputByZa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSortInputByZa.Name = "btnSortInputByZa";
-            this.btnSortInputByZa.Size = new System.Drawing.Size(125, 31);
-            this.btnSortInputByZa.TabIndex = 33;
-            this.btnSortInputByZa.Text = "Sort Input by ZA";
-            this.btnSortInputByZa.UseVisualStyleBackColor = true;
-            this.btnSortInputByZa.Click += new System.EventHandler(this.btnSortInputByZa_Click);
+            btnSortInputByZa.Location = new System.Drawing.Point(382, 520);
+            btnSortInputByZa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSortInputByZa.Name = "btnSortInputByZa";
+            btnSortInputByZa.Size = new System.Drawing.Size(109, 29);
+            btnSortInputByZa.TabIndex = 33;
+            btnSortInputByZa.Text = "Sort Input by ZA";
+            btnSortInputByZa.UseVisualStyleBackColor = true;
+            btnSortInputByZa.Click += btnSortInputByZa_Click;
             // 
             // btnSortInputByAz
             // 
-            this.btnSortInputByAz.Location = new System.Drawing.Point(301, 555);
-            this.btnSortInputByAz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSortInputByAz.Name = "btnSortInputByAz";
-            this.btnSortInputByAz.Size = new System.Drawing.Size(129, 31);
-            this.btnSortInputByAz.TabIndex = 32;
-            this.btnSortInputByAz.Text = "Sort Input by AZ";
-            this.btnSortInputByAz.UseVisualStyleBackColor = true;
-            this.btnSortInputByAz.Click += new System.EventHandler(this.btnSortInputByAz_Click);
+            btnSortInputByAz.Location = new System.Drawing.Point(263, 520);
+            btnSortInputByAz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSortInputByAz.Name = "btnSortInputByAz";
+            btnSortInputByAz.Size = new System.Drawing.Size(113, 29);
+            btnSortInputByAz.TabIndex = 32;
+            btnSortInputByAz.Text = "Sort Input by AZ";
+            btnSortInputByAz.UseVisualStyleBackColor = true;
+            btnSortInputByAz.Click += btnSortInputByAz_Click;
             // 
             // FrmText
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 827);
-            this.Controls.Add(this.btnSortInputByZa);
-            this.Controls.Add(this.btnSortInputByAz);
-            this.Controls.Add(this.tcOptions);
-            this.Controls.Add(this.btnSetOutToClipboard);
-            this.Controls.Add(this.btnSetOutToIn);
-            this.Controls.Add(this.btnSortByZa);
-            this.Controls.Add(this.btnSortByAz);
-            this.Controls.Add(this.lblOutput);
-            this.Controls.Add(this.lblInput);
-            this.Controls.Add(this.txtOutput);
-            this.Controls.Add(this.txtInput);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmText";
-            this.Text = resources.GetString("$this.Text");
-            this.tcOptions.ResumeLayout(false);
-            this.tpReplace.ResumeLayout(false);
-            this.tpReplace.PerformLayout();
-            this.tpTemplate.ResumeLayout(false);
-            this.tpTemplate.PerformLayout();
-            this.tpToken.ResumeLayout(false);
-            this.tpToken.PerformLayout();
-            this.tpLoadList.ResumeLayout(false);
-            this.tpLoadList.PerformLayout();
-            this.tpAction.ResumeLayout(false);
-            this.tpAction.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(872, 775);
+            Controls.Add(btnSortInputByZa);
+            Controls.Add(btnSortInputByAz);
+            Controls.Add(tcOptions);
+            Controls.Add(btnSetOutToClipboard);
+            Controls.Add(btnSetOutToIn);
+            Controls.Add(btnSortByZa);
+            Controls.Add(btnSortByAz);
+            Controls.Add(lblOutput);
+            Controls.Add(lblInput);
+            Controls.Add(txtOutput);
+            Controls.Add(txtInput);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Name = "FrmText";
+            Text = resources.GetString("$this.Text");
+            tcOptions.ResumeLayout(false);
+            tpReplace.ResumeLayout(false);
+            tpReplace.PerformLayout();
+            tpTemplate.ResumeLayout(false);
+            tpTemplate.PerformLayout();
+            tpToken.ResumeLayout(false);
+            tpToken.PerformLayout();
+            tpLoadList.ResumeLayout(false);
+            tpLoadList.PerformLayout();
+            tpAction.ResumeLayout(false);
+            tpAction.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1001,6 +1006,7 @@
         private System.Windows.Forms.Button btnClassToMap;
         private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.Label lblClassName;
+        private System.Windows.Forms.Button btnTableToClassWithJP;
     }
 }
 
