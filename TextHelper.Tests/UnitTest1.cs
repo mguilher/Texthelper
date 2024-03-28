@@ -10,7 +10,6 @@ namespace TextHelper.Tests
 
         [Theory]
         [InlineData(true)]
-        [InlineData(true)]
         public void MeuTheory(bool testData)
         {
             Assert.True(testData);
