@@ -783,7 +783,7 @@
             // 
             // btnTableToClassWithJP
             // 
-            btnTableToClassWithJP.Location = new System.Drawing.Point(177, 71);
+            btnTableToClassWithJP.Location = new System.Drawing.Point(172, 71);
             btnTableToClassWithJP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnTableToClassWithJP.Name = "btnTableToClassWithJP";
             btnTableToClassWithJP.Size = new System.Drawing.Size(272, 29);
