@@ -9,7 +9,7 @@ namespace TextHelper.Tests
         }
 
         [Theory]
-        [InlineData(false)]
+        [InlineData(true)]
         [InlineData(true)]
         public void MeuTheory(bool testData)
         {
