@@ -58,7 +58,7 @@ jobs:
     env:
       Solution_Name: TextHelper.sln   # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: TextHelper.Tests\TextHelper.Tests.csproj  # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: TextHelper.App.Package   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Directory: TextHelper\TextHelper.App.Package   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Wap_Project_Path: TextHelper\TextHelper.App.Package # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
