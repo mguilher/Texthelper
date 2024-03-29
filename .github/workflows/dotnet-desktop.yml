@@ -25,4 +25,4 @@
         - name: Build
           run: dotnet build --no-restore
         - name: Publish
-          run: dotnet publish TextHelper.csproj -c Release -o release — nologo
+          run: dotnet publish -c Release -o release
