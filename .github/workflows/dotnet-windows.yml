@@ -30,4 +30,4 @@
           uses: actions/upload-artifact@v2
           with:
             name: Application_Artifact
-            path: /home/runner/work/Texthelper/Texthelper/release/
+            path: D:\a\Texthelper\Texthelper\release\
