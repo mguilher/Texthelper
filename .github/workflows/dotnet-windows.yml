@@ -1,39 +1,33 @@
-name: "Deploy Texthelper"
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-on:
-  push:
-     tags:
-        - "v*" 
-           
-env:
-   PROJECT_PATH: Texthelper/Texthelper.csproj    
-    
-jobs:
-  deploy:
-     runs-on: windows-latest
-     steps:
-        - uses: actions/checkout@v3
-     
-        - uses: actions/setup-dotnet@v3
-          with: 
-            dotnet-version: 8.0.x
+    name: .NET
 
-        - run: dotnet restore ${{ env.PROJECT_PATH }}
-  
-        - run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
-  
-        - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true
-  
-        - uses: actions/create-release@v1
-          id: create_release
-          env: 
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with: 
-            tag_name: ${{ github.ref }} 
-            release_name: ${{ github.ref }}
+    on:
+      push:
+        branches: [ "main" ]
+      pull_request:
+        branches: [ "main" ]
 
-        - uses: csexton/release-asset-action@v2
+    jobs:
+      build:
+
+        runs-on: windows-latest
+
+        steps:
+        - uses: actions/checkout@v4
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
           with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            pattern: TarotType.Main/bin/Release/net8.0-windows/win-x64/publish/Texthelper.exe
-            release-url: ${{ steps.create_release.outputs.upload_url }}
+            dotnet-version: 8.0.x
+        - name: Restore dependencies
+          run: dotnet restore
+        - name: Build
+          run: dotnet build --no-restore
+        - name: Publish
+          run: dotnet publish -c Release -o release
+        - name: Upload Build Artifact
+          uses: actions/upload-artifact@v2
+          with:
+            name: Application_Artifact
+            path: D:\a\Texthelper\Texthelper\release\
