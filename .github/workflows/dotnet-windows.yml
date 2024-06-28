@@ -1,56 +1,115 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+name: CI
 
-    name: .NET
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
-    on:
-      push:
-        branches: [ "main" ]
-      pull_request:
-        branches: [ "main" ]
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
-    jobs:
-      build:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
 
-        runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-        steps:
-        - uses: actions/checkout@v4
-        - name: Setup .NET
-          uses: actions/setup-dotnet@v4
-          with:
-            dotnet-version: 8.0.x
-        - name: Restore dependencies
-          run: dotnet restore
-        - name: Build
-          run: dotnet build --no-restore
-        - name: Publish
-          run: dotnet publish -c Release -o release
-        - name: Upload Build Artifact
-          uses: actions/upload-artifact@v2
-          with:
-            name: Application_Artifact
-            path: D:\a\Texthelper\Texthelper\release\
-        - name: Create Release
-          id: create_release
-          uses: actions/create-release@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-            tag_name: ${{ github.ref }}
-            release_name: Release ${{ github.ref }}
-            body: |
-                Changes in this Release
-                - First Change
-                - Second Change
-            draft: false
-            prerelease: false
-        - name: Upload Release Asset
-          id: upload-release-asset 
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./my-artifact.zip
-            asset_name: my-artifact.zip
-            asset_content_type: application/zip
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Build solution
+        run: dotnet build -c Release --verbosity minimal
+
+      - name: Run tests
+        run: dotnet test -c Release --verbosity minimal --no-build --no-restore
+
+      - name: Publish
+        run: dotnet publish -c Release --no-build --no-restore
+
+      - name: Upload Core artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Core
+          path: ./Publish/Core
+
+  deploy_core:
+    name: Deploy Core
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: Core
+
+      - name: Upload to ftp
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          remoteDir: Core
+          forceSsl: true
+
+  create_release:
+    name: Create Release
+    needs: [deploy_core]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact Core
+        uses: actions/download-artifact@v3
+        with:
+          name: Core
+          path: Core
+  
+      - name: Zip artifact
+        run: |
+          zip -r Core.zip ./Core/*
+                    
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: Release ${{ github.run_number }}
+          body: New release of Project
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset Core
+        id: upload_core
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Core.zip
+          asset_name: Core.zip
+          asset_content_type: application/zip
+
+      - name: Send Webhook
+        uses: distributhor/workflow-webhook@v3
+        env:
+          webhook_type: 'json-extended'
+          event_name: 'release'
+          webhook_url: ${{ secrets.RELEASE_WEBHOOK_URL }}
+          webhook_secret: '{"x-github-release-token": "${{ secrets.RELEASE_WEBHOOK_TOKEN }}"}'
+          data: '{ "tag_name": "${{ github.run_number }}", "assets": [{ "name" : "Core.zip", "browser_download_url": "${{ steps.upload_core.outputs.browser_download_url }}" } ] }'
+
+  cleanup:
+    name: Cleanup
+    needs: create_release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove artifacts
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: "*"
