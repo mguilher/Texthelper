@@ -1,57 +1,39 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+name: "Deploy Texthelper"
 
-    name: .NET
-
-    on:
-      push:
-        branches: [ "main" ]
-      pull_request:
-        branches: [ "main" ]
-
-    jobs:
-      build:
-
-        runs-on: windows-latest
-
-        steps:
-        - uses: actions/checkout@v4
-        - name: Setup .NET
-          uses: actions/setup-dotnet@v4
-          with:
+on:
+  push:
+     tags:
+        - "v*" 
+           
+env:
+   PROJECT_PATH: Texthelper/Texthelper.csproj    
+    
+jobs:
+  deploy:
+     runs-on: windows-latest
+     steps:
+        - uses: actions/checkout@v3
+     
+        - uses: actions/setup-dotnet@v3
+          with: 
             dotnet-version: 8.0.x
-        - name: Restore dependencies
-          run: dotnet restore
-        - name: Build
-          run: dotnet build --no-restore
-        - name: Publish
-          run: dotnet publish -c Release -o release
-        - name: Upload Build Artifact
-          uses: actions/upload-artifact@v2
-          with:
-            name: Application_Artifact
-            path: D:\a\Texthelper\Texthelper\release\
-        - name: Create Release
+
+        - run: dotnet restore ${{ env.PROJECT_PATH }}
+  
+        - run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+  
+        - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true
+  
+        - uses: actions/create-release@v1
           id: create_release
-          uses: actions/create-release@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-          with:
-              tag_name: ${{ github.ref }}
-              release_name: Release ${{ github.ref }}
-              body: |
-                Changes in this Release
-                - First Change
-                - Second Change
-              draft: false
-              prerelease: false
-        - name: Upload Release Asset
-          id: upload-release-asset 
-          uses: actions/upload-release-asset@v1
-          env:
+          env: 
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with: 
+            tag_name: ${{ github.ref }} 
+            release_name: ${{ github.ref }}
+
+        - uses: csexton/release-asset-action@v2
           with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./Application_Artifact.zip
-            asset_name: Application_Artifact.zip
-            asset_content_type: application/zip
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            pattern: TarotType.Main/bin/Release/net8.0-windows/win-x64/publish/Texthelper.exe
+            release-url: ${{ steps.create_release.outputs.upload_url }}
