@@ -36,27 +36,12 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Core
-          path: ./Publish/Core
-
-  deploy_core:
-    name: Deploy Core
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: Core
-
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Application_Artifact
           path: D:\a\Texthelper\Texthelper\release\
+
 
   create_release:
     name: Create Release
-    needs: [deploy_core]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact Core
