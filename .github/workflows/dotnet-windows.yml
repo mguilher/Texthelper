@@ -48,14 +48,11 @@ jobs:
         with:
           name: Core
 
-      - name: Upload to ftp
-        uses: sebastianpopp/ftp-action@releases/v2
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          remoteDir: Core
-          forceSsl: true
+          name: Application_Artifact
+          path: D:\a\Texthelper\Texthelper\release\
 
   create_release:
     name: Create Release
