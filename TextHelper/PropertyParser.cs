@@ -31,6 +31,12 @@ namespace TextHelper
                             textAttribute = "";
                         }
 
+                        if (p.DataType.EndsWith("?"))
+                        {
+                            p.DataType=p.DataType.Replace("?","");
+                            p.Nullable = true;
+                        }
+
                         list.Add(p);
                     }
 
@@ -42,6 +48,13 @@ namespace TextHelper
                             p.Description = GetDisplay(textAttribute);
                             textAttribute = "";
                         }
+
+                        if (p.DataType.EndsWith("?"))
+                        {
+                            p.DataType = p.DataType.Replace("?", "");
+                            p.Nullable = true;
+                        }
+
                         list.Add(p);
                     }
 
@@ -54,6 +67,13 @@ namespace TextHelper
                             p.Description = GetDisplay(textAttribute);
                             textAttribute = "";
                         }
+
+                        if (p.DataType.EndsWith("?"))
+                        {
+                            p.DataType = p.DataType.Replace("?", "");
+                            p.Nullable = true;
+                        }
+
                         list.Add(p);
                     }
                 }
@@ -95,6 +115,50 @@ namespace TextHelper
             foreach (PropertyModel property in list)
             {
                 sb.AppendLine($"{property.Name}={variableName}.{property.Name};");
+            }
+
+            return sb.ToString();
+        }
+
+        public string ToAttribution(List<PropertyModel> list, string end)
+        {
+            var sb = new StringBuilder();
+            foreach (PropertyModel property in list)
+            {
+                sb.AppendLine($"{property.Name}={ToCamel(property.Name)}{end}");
+            }
+
+            return sb.ToString();
+        }
+
+        public string ToParameters(List<PropertyModel> list)
+        {
+            var sb = new StringBuilder();
+            foreach (PropertyModel property in list)
+            {
+                sb.Append($"{property.DataType} {ToCamel(property.Name)},");
+            }
+
+            return sb.ToString();
+        }
+
+        public string ToState(List<PropertyModel> list)
+        {
+            var sb = new StringBuilder();
+            foreach (PropertyModel property in list)
+            {
+                sb.AppendLine($"public {property.DataType} {property.Name} => _state.{property.Name};");
+            }
+
+            return sb.ToString();
+        }
+
+        public string ToTypescript(List<PropertyModel> list)
+        {
+            var sb = new StringBuilder();
+            foreach (PropertyModel property in list)
+            {
+                sb.AppendLine($"{ToCamel(property.Name)}{(property.Nullable?"?":"")}: {MapCSharpTypeToTypeScript(property.DataType)};");
             }
 
             return sb.ToString();

@@ -925,12 +925,224 @@ namespace TextHelper
                 {
                     var properties = helper.Parser(list);
 
-                    txtOutput.Text = helper.ToClass(properties,true);
+                    txtOutput.Text = helper.ToClass(properties, true);
                 }
             }
             catch (Exception ex)
             {
                 txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnPropertiesToAttribution_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtVariableName.Text))
+            {
+                MessageBox.Show(Resources.NoVariableNameData, Resources.Alert);
+                return;
+            }
+
+            try
+            {
+                List<string> list = GetList();
+                var helper = new PropertyParser();
+                if (list != null)
+                {
+                    string result = helper.ToAttribution(helper.Parser(list), ";");
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnPropertiesToAttributionComma_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtVariableName.Text))
+            {
+                MessageBox.Show(Resources.NoVariableNameData, Resources.Alert);
+                return;
+            }
+
+            try
+            {
+                List<string> list = GetList();
+                var helper = new PropertyParser();
+                if (list != null)
+                {
+                    string result = helper.ToAttribution(helper.Parser(list), ",");
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnParameters_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtVariableName.Text))
+            {
+                MessageBox.Show(Resources.NoVariableNameData, Resources.Alert);
+                return;
+            }
+
+            try
+            {
+                List<string> list = GetList();
+                var helper = new PropertyParser();
+                if (list != null)
+                {
+                    string result = helper.ToParameters(helper.Parser(list));
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnPropertiesToState_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtVariableName.Text))
+            {
+                MessageBox.Show(Resources.NoVariableNameData, Resources.Alert);
+                return;
+            }
+
+            try
+            {
+                List<string> list = GetList();
+                var helper = new PropertyParser();
+                if (list != null)
+                {
+                    string result = helper.ToState(helper.Parser(list));
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnPropertiesToTemplate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> list = GetList();
+                var helper = new PropertyParser();
+                if (list != null)
+                {
+                    List<List<string>> lita = helper.Parser(list).Select(a => new List<string>() { a.Name, a.DataType }).ToList();
+                    string result = SplitReplaceList(lita);
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnPropertiesToTypescript_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> list = GetList();
+                var helper = new PropertyParser();
+                if (list != null)
+                {
+                    string result = helper.ToTypescript(helper.Parser(list));
+                    txtOutput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        private void btnTrimList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var list = GetList();
+                if (list != null)
+                {
+                    string result = TrimList(list, true);
+                    txtInput.Text = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                txtOutput.Text = ex.ToString();
+            }
+        }
+
+        public string TrimList(List<string> list, bool fuzzy)
+        {
+            if (list == null || list.Count == 0)
+            {
+                MessageBox.Show(Resources.NoInputValue, Resources.Alert);
+                return null;
+            }
+
+            var sb = new StringBuilder();
+
+            foreach (string s in list)
+            {
+                if (fuzzy)
+                {
+                    sb.AppendLine(s.TrimStart().TrimEnd().Trim());
+                }
+                else
+                {
+                    sb.AppendLine(s.Trim());
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        private void btnFileList_Click(object sender, EventArgs e)
+        {
+            var folderBrowserDialog1 = new FolderBrowserDialog
+            {
+                Description = "Select the directory for list files",
+                ShowNewFolderButton = false,
+                RootFolder = Environment.SpecialFolder.Personal
+            };
+
+            var result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var list = new List<string>();
+                list.AddRange(Directory.GetFiles(folderBrowserDialog1.SelectedPath));
+                var sb = new StringBuilder();
+                foreach (string s in list)
+                {
+                    if (chkOnlyFilesName.Checked)
+                    {
+                        int start = s.LastIndexOf("\\");
+                        int end = s.LastIndexOf(".");
+                        sb.AppendLine(s.Substring(start + 1, end- start-1));
+                    }
+                    else if (chkListFilesPath.Checked)
+                    {
+                        sb.AppendLine(s);
+                    }
+                    else
+                    {
+                        sb.AppendLine(s.Replace($"{folderBrowserDialog1.SelectedPath}\\", ""));
+                    }
+                }
+
+                txtInput.Text = sb.ToString();
             }
         }
     }

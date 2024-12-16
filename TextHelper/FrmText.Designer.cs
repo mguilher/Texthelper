@@ -61,6 +61,9 @@
             btnPropertiesToAssignment = new System.Windows.Forms.Button();
             tcOptions = new System.Windows.Forms.TabControl();
             tpReplace = new System.Windows.Forms.TabPage();
+            chkListFilesPath = new System.Windows.Forms.CheckBox();
+            btnFileList = new System.Windows.Forms.Button();
+            btnTrimList = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             btnReplicate = new System.Windows.Forms.Button();
             lblQuantityReplicate = new System.Windows.Forms.Label();
@@ -90,6 +93,12 @@
             txtPathCsv = new System.Windows.Forms.TextBox();
             lblPathCsv = new System.Windows.Forms.Label();
             tpAction = new System.Windows.Forms.TabPage();
+            btnPropertiesToTypescript = new System.Windows.Forms.Button();
+            btnPropertiesToTemplate = new System.Windows.Forms.Button();
+            btnPropertiesToState = new System.Windows.Forms.Button();
+            btnParameters = new System.Windows.Forms.Button();
+            btnPropertiesToAttributionComma = new System.Windows.Forms.Button();
+            btnPropertiesToAttributionSemicolon = new System.Windows.Forms.Button();
             btnTableToClassWithJP = new System.Windows.Forms.Button();
             txtClassName = new System.Windows.Forms.TextBox();
             lblClassName = new System.Windows.Forms.Label();
@@ -101,6 +110,7 @@
             btnTableSqlToClass = new System.Windows.Forms.Button();
             btnSortInputByZa = new System.Windows.Forms.Button();
             btnSortInputByAz = new System.Windows.Forms.Button();
+            chkOnlyFilesName = new System.Windows.Forms.CheckBox();
             tcOptions.SuspendLayout();
             tpReplace.SuspendLayout();
             tpTemplate.SuspendLayout();
@@ -423,6 +433,10 @@
             // 
             // tpReplace
             // 
+            tpReplace.Controls.Add(chkOnlyFilesName);
+            tpReplace.Controls.Add(chkListFilesPath);
+            tpReplace.Controls.Add(btnFileList);
+            tpReplace.Controls.Add(btnTrimList);
             tpReplace.Controls.Add(label1);
             tpReplace.Controls.Add(btnReplicate);
             tpReplace.Controls.Add(lblQuantityReplicate);
@@ -447,6 +461,38 @@
             tpReplace.TabIndex = 0;
             tpReplace.Text = "Options";
             tpReplace.UseVisualStyleBackColor = true;
+            // 
+            // chkListFilesPath
+            // 
+            chkListFilesPath.AutoSize = true;
+            chkListFilesPath.Location = new System.Drawing.Point(601, 163);
+            chkListFilesPath.Name = "chkListFilesPath";
+            chkListFilesPath.Size = new System.Drawing.Size(125, 19);
+            chkListFilesPath.TabIndex = 37;
+            chkListFilesPath.Text = "List Files With Path";
+            chkListFilesPath.UseVisualStyleBackColor = true;
+            // 
+            // btnFileList
+            // 
+            btnFileList.Location = new System.Drawing.Point(597, 122);
+            btnFileList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnFileList.Name = "btnFileList";
+            btnFileList.Size = new System.Drawing.Size(113, 29);
+            btnFileList.TabIndex = 36;
+            btnFileList.Text = "Files List";
+            btnFileList.UseVisualStyleBackColor = true;
+            btnFileList.Click += btnFileList_Click;
+            // 
+            // btnTrimList
+            // 
+            btnTrimList.Location = new System.Drawing.Point(429, 157);
+            btnTrimList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnTrimList.Name = "btnTrimList";
+            btnTrimList.Size = new System.Drawing.Size(113, 29);
+            btnTrimList.TabIndex = 35;
+            btnTrimList.Text = "Trim List";
+            btnTrimList.UseVisualStyleBackColor = true;
+            btnTrimList.Click += btnTrimList_Click;
             // 
             // label1
             // 
@@ -758,6 +804,12 @@
             // 
             // tpAction
             // 
+            tpAction.Controls.Add(btnPropertiesToTypescript);
+            tpAction.Controls.Add(btnPropertiesToTemplate);
+            tpAction.Controls.Add(btnPropertiesToState);
+            tpAction.Controls.Add(btnParameters);
+            tpAction.Controls.Add(btnPropertiesToAttributionComma);
+            tpAction.Controls.Add(btnPropertiesToAttributionSemicolon);
             tpAction.Controls.Add(btnTableToClassWithJP);
             tpAction.Controls.Add(txtClassName);
             tpAction.Controls.Add(lblClassName);
@@ -781,12 +833,78 @@
             tpAction.Text = "Custom Actions";
             tpAction.UseVisualStyleBackColor = true;
             // 
+            // btnPropertiesToTypescript
+            // 
+            btnPropertiesToTypescript.Location = new System.Drawing.Point(418, 83);
+            btnPropertiesToTypescript.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToTypescript.Name = "btnPropertiesToTypescript";
+            btnPropertiesToTypescript.Size = new System.Drawing.Size(172, 29);
+            btnPropertiesToTypescript.TabIndex = 47;
+            btnPropertiesToTypescript.Text = "Properties To Typescript";
+            btnPropertiesToTypescript.UseVisualStyleBackColor = true;
+            btnPropertiesToTypescript.Click += btnPropertiesToTypescript_Click;
+            // 
+            // btnPropertiesToTemplate
+            // 
+            btnPropertiesToTemplate.Location = new System.Drawing.Point(689, 196);
+            btnPropertiesToTemplate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToTemplate.Name = "btnPropertiesToTemplate";
+            btnPropertiesToTemplate.Size = new System.Drawing.Size(139, 29);
+            btnPropertiesToTemplate.TabIndex = 46;
+            btnPropertiesToTemplate.Text = "Properties Template";
+            btnPropertiesToTemplate.UseVisualStyleBackColor = true;
+            btnPropertiesToTemplate.Click += btnPropertiesToTemplate_Click;
+            // 
+            // btnPropertiesToState
+            // 
+            btnPropertiesToState.Location = new System.Drawing.Point(642, 149);
+            btnPropertiesToState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToState.Name = "btnPropertiesToState";
+            btnPropertiesToState.Size = new System.Drawing.Size(172, 29);
+            btnPropertiesToState.TabIndex = 45;
+            btnPropertiesToState.Text = "Properties To State";
+            btnPropertiesToState.UseVisualStyleBackColor = true;
+            btnPropertiesToState.Click += btnPropertiesToState_Click;
+            // 
+            // btnParameters
+            // 
+            btnParameters.Location = new System.Drawing.Point(642, 116);
+            btnParameters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnParameters.Name = "btnParameters";
+            btnParameters.Size = new System.Drawing.Size(172, 29);
+            btnParameters.TabIndex = 44;
+            btnParameters.Text = "Properties To Parameters";
+            btnParameters.UseVisualStyleBackColor = true;
+            btnParameters.Click += btnParameters_Click;
+            // 
+            // btnPropertiesToAttributionComma
+            // 
+            btnPropertiesToAttributionComma.Location = new System.Drawing.Point(418, 149);
+            btnPropertiesToAttributionComma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToAttributionComma.Name = "btnPropertiesToAttributionComma";
+            btnPropertiesToAttributionComma.Size = new System.Drawing.Size(205, 29);
+            btnPropertiesToAttributionComma.TabIndex = 43;
+            btnPropertiesToAttributionComma.Text = "Properties To Attribution Comma";
+            btnPropertiesToAttributionComma.UseVisualStyleBackColor = true;
+            btnPropertiesToAttributionComma.Click += btnPropertiesToAttributionComma_Click;
+            // 
+            // btnPropertiesToAttributionSemicolon
+            // 
+            btnPropertiesToAttributionSemicolon.Location = new System.Drawing.Point(418, 116);
+            btnPropertiesToAttributionSemicolon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnPropertiesToAttributionSemicolon.Name = "btnPropertiesToAttributionSemicolon";
+            btnPropertiesToAttributionSemicolon.Size = new System.Drawing.Size(205, 29);
+            btnPropertiesToAttributionSemicolon.TabIndex = 42;
+            btnPropertiesToAttributionSemicolon.Text = "Properties To Attribution Semicolon";
+            btnPropertiesToAttributionSemicolon.UseVisualStyleBackColor = true;
+            btnPropertiesToAttributionSemicolon.Click += btnPropertiesToAttribution_Click;
+            // 
             // btnTableToClassWithJP
             // 
             btnTableToClassWithJP.Location = new System.Drawing.Point(172, 71);
             btnTableToClassWithJP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnTableToClassWithJP.Name = "btnTableToClassWithJP";
-            btnTableToClassWithJP.Size = new System.Drawing.Size(272, 29);
+            btnTableToClassWithJP.Size = new System.Drawing.Size(201, 29);
             btnTableToClassWithJP.TabIndex = 41;
             btnTableToClassWithJP.Text = "Table To Class With JSON Property";
             btnTableToClassWithJP.UseVisualStyleBackColor = true;
@@ -899,6 +1017,16 @@
             btnSortInputByAz.UseVisualStyleBackColor = true;
             btnSortInputByAz.Click += btnSortInputByAz_Click;
             // 
+            // chkOnlyFilesName
+            // 
+            chkOnlyFilesName.AutoSize = true;
+            chkOnlyFilesName.Location = new System.Drawing.Point(601, 188);
+            chkOnlyFilesName.Name = "chkOnlyFilesName";
+            chkOnlyFilesName.Size = new System.Drawing.Size(133, 19);
+            chkOnlyFilesName.TabIndex = 38;
+            chkOnlyFilesName.Text = "List Files Only Name";
+            chkOnlyFilesName.UseVisualStyleBackColor = true;
+            // 
             // FrmText
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1007,6 +1135,16 @@
         private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Button btnTableToClassWithJP;
+        private System.Windows.Forms.Button btnPropertiesToAttributionSemicolon;
+        private System.Windows.Forms.Button btnPropertiesToAttributionComma;
+        private System.Windows.Forms.Button btnParameters;
+        private System.Windows.Forms.Button btnPropertiesToState;
+        private System.Windows.Forms.Button btnPropertiesToTemplate;
+        private System.Windows.Forms.Button btnPropertiesToTypescript;
+        private System.Windows.Forms.Button btnTrimList;
+        private System.Windows.Forms.CheckBox chkListFilesPath;
+        private System.Windows.Forms.Button btnFileList;
+        private System.Windows.Forms.CheckBox chkOnlyFilesName;
     }
 }
 
