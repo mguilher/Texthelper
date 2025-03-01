@@ -61,6 +61,7 @@
             btnPropertiesToAssignment = new System.Windows.Forms.Button();
             tcOptions = new System.Windows.Forms.TabControl();
             tpReplace = new System.Windows.Forms.TabPage();
+            chkOnlyFilesName = new System.Windows.Forms.CheckBox();
             chkListFilesPath = new System.Windows.Forms.CheckBox();
             btnFileList = new System.Windows.Forms.Button();
             btnTrimList = new System.Windows.Forms.Button();
@@ -110,7 +111,6 @@
             btnTableSqlToClass = new System.Windows.Forms.Button();
             btnSortInputByZa = new System.Windows.Forms.Button();
             btnSortInputByAz = new System.Windows.Forms.Button();
-            chkOnlyFilesName = new System.Windows.Forms.CheckBox();
             tcOptions.SuspendLayout();
             tpReplace.SuspendLayout();
             tpTemplate.SuspendLayout();
@@ -461,6 +461,16 @@
             tpReplace.TabIndex = 0;
             tpReplace.Text = "Options";
             tpReplace.UseVisualStyleBackColor = true;
+            // 
+            // chkOnlyFilesName
+            // 
+            chkOnlyFilesName.AutoSize = true;
+            chkOnlyFilesName.Location = new System.Drawing.Point(601, 188);
+            chkOnlyFilesName.Name = "chkOnlyFilesName";
+            chkOnlyFilesName.Size = new System.Drawing.Size(133, 19);
+            chkOnlyFilesName.TabIndex = 38;
+            chkOnlyFilesName.Text = "List Files Only Name";
+            chkOnlyFilesName.UseVisualStyleBackColor = true;
             // 
             // chkListFilesPath
             // 
@@ -1016,16 +1026,6 @@
             btnSortInputByAz.Text = "Sort Input by AZ";
             btnSortInputByAz.UseVisualStyleBackColor = true;
             btnSortInputByAz.Click += btnSortInputByAz_Click;
-            // 
-            // chkOnlyFilesName
-            // 
-            chkOnlyFilesName.AutoSize = true;
-            chkOnlyFilesName.Location = new System.Drawing.Point(601, 188);
-            chkOnlyFilesName.Name = "chkOnlyFilesName";
-            chkOnlyFilesName.Size = new System.Drawing.Size(133, 19);
-            chkOnlyFilesName.TabIndex = 38;
-            chkOnlyFilesName.Text = "List Files Only Name";
-            chkOnlyFilesName.UseVisualStyleBackColor = true;
             // 
             // FrmText
             // 
